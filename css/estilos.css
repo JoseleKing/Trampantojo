@@ -1,32 +1,33 @@
 /* ═══════════════════════════════════════════════════════════════════
-   Trampantojo — papel, tinta verde y un poco de ilusionismo.
-   La paleta sale del logo: salvia #DCE3DA, verde #18322B, sombra #ABB7AE.
+   Trampantojo — papel, tinta sepia y un poco de ilusionismo.
+   Misma familia que Periplo, Mentidero y Calendas: papel #F4ECDD,
+   tinta #2B211A y un único acento propio, el verde #2F6B4E de la sombra del logo.
    ═══════════════════════════════════════════════════════════════════ */
 
 :root {
   color-scheme: light;
-  --papel: #EDF0E8;
-  --papel-alto: #F8F9F4;
-  --papel-hondo: #DFE5DC;
-  --tinta: #18322B;
-  --tinta-2: #3E554E;
-  --tinta-3: #6C7E77;
-  --linea: #C6D0C4;
-  --regla: #18322B;
-  --acento: #3B7360;
-  --acento-suave: rgba(59, 115, 96, .12);
-  --alerta: #A54A3C;
-  --oro: #A88B4A;
-  --oro-texto: #7D6631;
-  --marcador: rgba(171, 183, 174, .62);
+  --papel: #F3EAD8;
+  --papel-alto: #FBF6EA;
+  --papel-hondo: #E9DDC4;
+  --tinta: #2A2019;
+  --tinta-2: #5E4C3A;
+  --tinta-3: #7D6A55;
+  --linea: #D9CBB0;
+  --regla: #2A2019;
+  --acento: #2F6B4E;
+  --acento-suave: rgba(47, 107, 78, .12);
+  --alerta: #A3352C;
+  --oro: #A8823A;
+  --oro-texto: #7A5C24;
+  --marcador: rgba(185, 162, 122, .45);
   --azul: #2F5D78;
-  --verde: #4A8A68;
-  --ambar: #C79A33;
-  --acierto-fondo: #18322B;
-  --acierto-tinta: #DCE3DA;
-  --luz: rgba(255, 255, 250, .9);
-  --sombra: 0 1px 0 rgba(255, 255, 255, .7) inset, 0 22px 44px -28px rgba(24, 50, 43, .5), 0 2px 6px -3px rgba(24, 50, 43, .18);
-  --grano: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .1 0 0 0 0 .2 0 0 0 0 .16 0 0 0 .1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  --verde: #3C6A3E;
+  --ambar: #C08A2E;
+  --acierto-fondo: #2A2019;
+  --acierto-tinta: #F3EAD8;
+  --luz: rgba(255, 251, 240, .9);
+  --sombra: 0 1px 0 rgba(255, 255, 255, .6) inset, 0 22px 44px -28px rgba(42, 32, 25, .5), 0 2px 6px -3px rgba(42, 32, 25, .18);
+  --grano: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .16 0 0 0 0 .12 0 0 0 0 .08 0 0 0 .1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   --ver-luna: block;
   --ver-sol: none;
 
@@ -37,28 +38,28 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     color-scheme: dark;
-    --papel: #101C18;
-    --papel-alto: #17261F;
-    --papel-hondo: #0B1411;
-    --tinta: #DCE3DA;
-    --tinta-2: #B3C0B7;
-    --tinta-3: #84958B;
-    --linea: #2B3D36;
-    --regla: #ABB7AE;
-    --acento: #8FC2AA;
-    --acento-suave: rgba(143, 194, 170, .14);
-    --alerta: #E08A7A;
-    --oro: #CDB273;
-    --oro-texto: #D3BA7E;
-    --marcador: rgba(171, 183, 174, .3);
-    --azul: #8DB8D2;
-    --verde: #7DC09A;
-    --ambar: #DDB85C;
-    --acierto-fondo: #DCE3DA;
-    --acierto-tinta: #18322B;
-    --luz: rgba(120, 175, 150, .12);
+    --papel: #1D1813;
+    --papel-alto: #2A231C;
+    --papel-hondo: #15110D;
+    --tinta: #EFE4CF;
+    --tinta-2: #C2B196;
+    --tinta-3: #9C8A72;
+    --linea: #3E3327;
+    --regla: #B3A18A;
+    --acento: #8CC4A2;
+    --acento-suave: rgba(140, 196, 162, .14);
+    --alerta: #E58A7F;
+    --oro: #D6A46D;
+    --oro-texto: #DDB27F;
+    --marcador: rgba(185, 162, 122, .26);
+    --azul: #93B6D6;
+    --verde: #8FC08A;
+    --ambar: #DDB25C;
+    --acierto-fondo: #EFE4CF;
+    --acierto-tinta: #2A2019;
+    --luz: rgba(214, 164, 109, .07);
     --sombra: 0 1px 0 rgba(255, 255, 255, .04) inset, 0 24px 48px -26px rgba(0, 0, 0, .85), 0 2px 8px -3px rgba(0, 0, 0, .5);
-    --grano: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .86 0 0 0 0 .9 0 0 0 0 .86 0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    --grano: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .94 0 0 0 0 .89 0 0 0 0 .81 0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
     --ver-luna: none;
     --ver-sol: block;
   }
@@ -66,28 +67,28 @@
 
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --papel: #101C18;
-  --papel-alto: #17261F;
-  --papel-hondo: #0B1411;
-  --tinta: #DCE3DA;
-  --tinta-2: #B3C0B7;
-  --tinta-3: #84958B;
-  --linea: #2B3D36;
-  --regla: #ABB7AE;
-  --acento: #8FC2AA;
-  --acento-suave: rgba(143, 194, 170, .14);
-  --alerta: #E08A7A;
-  --oro: #CDB273;
-  --oro-texto: #D3BA7E;
-  --marcador: rgba(171, 183, 174, .3);
-  --azul: #8DB8D2;
-  --verde: #7DC09A;
-  --ambar: #DDB85C;
-  --acierto-fondo: #DCE3DA;
-  --acierto-tinta: #18322B;
-  --luz: rgba(120, 175, 150, .12);
+  --papel: #1D1813;
+  --papel-alto: #2A231C;
+  --papel-hondo: #15110D;
+  --tinta: #EFE4CF;
+  --tinta-2: #C2B196;
+  --tinta-3: #9C8A72;
+  --linea: #3E3327;
+  --regla: #B3A18A;
+  --acento: #8CC4A2;
+  --acento-suave: rgba(140, 196, 162, .14);
+  --alerta: #E58A7F;
+  --oro: #D6A46D;
+  --oro-texto: #DDB27F;
+  --marcador: rgba(185, 162, 122, .26);
+  --azul: #93B6D6;
+  --verde: #8FC08A;
+  --ambar: #DDB25C;
+  --acierto-fondo: #EFE4CF;
+  --acierto-tinta: #2A2019;
+  --luz: rgba(214, 164, 109, .07);
   --sombra: 0 1px 0 rgba(255, 255, 255, .04) inset, 0 24px 48px -26px rgba(0, 0, 0, .85), 0 2px 8px -3px rgba(0, 0, 0, .5);
-  --grano: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .86 0 0 0 0 .9 0 0 0 0 .86 0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  --grano: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .94 0 0 0 0 .89 0 0 0 0 .81 0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   --ver-luna: none;
   --ver-sol: block;
 }
@@ -328,7 +329,7 @@ button { font: inherit; color: inherit; }
   padding: 34px 0 26px;
   text-align: center;
 }
-.portada-caja { width: 104px; height: 104px; filter: drop-shadow(0 14px 22px rgba(24, 50, 43, .22)); }
+.portada-caja { width: 104px; height: 104px; filter: drop-shadow(0 14px 22px rgba(42, 32, 25, .22)); }
 .portada::after {
   content: '✦';
   position: absolute;
@@ -869,7 +870,7 @@ button { font: inherit; color: inherit; }
   color: var(--tinta);
   box-shadow: var(--sombra);
 }
-.dialogo::backdrop { background: rgba(8, 20, 16, .55); backdrop-filter: blur(2px); }
+.dialogo::backdrop { background: rgba(20, 14, 9, .55); backdrop-filter: blur(2px); }
 .dialogo[open] { animation: aparece .3s ease-out; }
 .dialogo-cuerpo { padding: 18px 20px 20px; line-height: 1.55; }
 .dialogo-cabeza { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 8px; }

@@ -594,7 +594,7 @@ const temaEfectivo = () => document.documentElement.dataset.theme || (oscuroSist
 function sincronizarTema() {
   const oscuro = temaEfectivo() === 'dark';
   $('b-tema').setAttribute('aria-label', oscuro ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro');
-  $('meta-tema').setAttribute('content', oscuro ? '#101C18' : '#EDF0E8');
+  $('meta-tema').setAttribute('content', oscuro ? '#1D1813' : '#F3EAD8');
 }
 function alternarTema() {
   const nuevo = temaEfectivo() === 'dark' ? 'light' : 'dark';
