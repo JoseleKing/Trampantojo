@@ -660,7 +660,15 @@ function enlazar() {
   });
 }
 
+// La portada se queda un mínimo en pantalla aunque las pistas carguen antes.
+const DURACION_PORTADA = 1400;
+function ocultarPortada(desde) {
+  const resto = Math.max(0, DURACION_PORTADA - (performance.now() - desde));
+  setTimeout(() => $('arranque').classList.add('fuera'), resto);
+}
+
 async function iniciar() {
+  const inicio = performance.now();
   enlazar();
   sincronizarTema();
 
@@ -680,12 +688,14 @@ async function iniciar() {
   } catch (e) {
     console.error('No se pudieron cargar las pistas', e);
     mostrar('p-error');
+    ocultarPortada(inicio);
     return;
   }
 
   prepararGlosario();
   if (!estado.tutorial) mostrar('p-intro');
   else abrirHoy();
+  ocultarPortada(inicio);
 }
 
 iniciar();

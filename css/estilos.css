@@ -319,6 +319,41 @@ button { font: inherit; color: inherit; }
 
 #p-error { padding-top: 40px; text-align: center; }
 
+/* ── Portada de arranque ──────────────────────────────────────────── */
+
+.arranque {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  padding: env(safe-area-inset-top) 16px env(safe-area-inset-bottom);
+  background-color: var(--papel);
+  background-image: var(--grano);
+  transition: opacity .5s ease, visibility 0s .5s;
+}
+.arranque.fuera { opacity: 0; visibility: hidden; }
+.arranque-logo {
+  width: 132px;
+  height: 132px;
+  filter: drop-shadow(0 14px 22px rgba(42, 32, 25, .22));
+  animation: aparece .6s ease-out both;
+}
+.arranque-nombre {
+  margin: 0;
+  font-family: var(--f-texto);
+  font-size: clamp(2.2rem, 10vw, 3rem);
+  font-weight: 450;
+  line-height: 1;
+  font-variation-settings: 'opsz' 36;
+  letter-spacing: -.01em;
+  color: var(--tinta);
+  animation: aparece .6s .15s ease-out both;
+}
+
 /* ── Portada (primera visita) ─────────────────────────────────────── */
 
 .portada {
