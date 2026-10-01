@@ -1,7 +1,7 @@
 /* ═══════════════════════════════════════════════════════════════════
    Trampantojo — papel, tinta sepia y un poco de ilusionismo.
    Misma familia que Periplo, Mentidero y Calendas: papel #F4ECDD,
-   tinta #2B211A y un único acento propio, el verde #2F6B4E de la sombra del logo.
+   tinta #2B211A y un único acento propio, el verde #2F6B4E.
    ═══════════════════════════════════════════════════════════════════ */
 
 :root {
@@ -25,7 +25,6 @@
   --ambar: #C08A2E;
   --acierto-fondo: #2A2019;
   --acierto-tinta: #F3EAD8;
-  --luz: rgba(255, 251, 240, .9);
   --sombra: 0 1px 0 rgba(255, 255, 255, .6) inset, 0 22px 44px -28px rgba(42, 32, 25, .5), 0 2px 6px -3px rgba(42, 32, 25, .18);
   --grano: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .16 0 0 0 0 .12 0 0 0 0 .08 0 0 0 .1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   --ver-luna: block;
@@ -57,7 +56,6 @@
     --ambar: #DDB25C;
     --acierto-fondo: #EFE4CF;
     --acierto-tinta: #2A2019;
-    --luz: rgba(214, 164, 109, .07);
     --sombra: 0 1px 0 rgba(255, 255, 255, .04) inset, 0 24px 48px -26px rgba(0, 0, 0, .85), 0 2px 8px -3px rgba(0, 0, 0, .5);
     --grano: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .94 0 0 0 0 .89 0 0 0 0 .81 0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
     --ver-luna: none;
@@ -86,7 +84,6 @@
   --ambar: #DDB25C;
   --acierto-fondo: #EFE4CF;
   --acierto-tinta: #2A2019;
-  --luz: rgba(214, 164, 109, .07);
   --sombra: 0 1px 0 rgba(255, 255, 255, .04) inset, 0 24px 48px -26px rgba(0, 0, 0, .85), 0 2px 8px -3px rgba(0, 0, 0, .5);
   --grano: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .94 0 0 0 0 .89 0 0 0 0 .81 0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   --ver-luna: none;
@@ -105,7 +102,7 @@ body {
   min-height: 100vh;
   min-height: 100dvh;
   background-color: var(--papel);
-  background-image: var(--grano), radial-gradient(120% 60% at 50% -8%, var(--luz), transparent 62%);
+  background-image: var(--grano);
   background-attachment: fixed;
   color: var(--tinta);
   font-family: var(--f-texto);
