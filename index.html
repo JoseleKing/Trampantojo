@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Trampantojo</title>
+  <meta name="description" content="Trampantojo: una pista críptica al día, en español. Cada frase esconde otra.">
+  <meta name="theme-color" content="#EDF0E8" id="meta-tema">
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+  <script>
+    // Aplica el tema guardado antes de pintar, para evitar el destello.
+    try {
+      var t = localStorage.getItem('trampantojo:tema');
+      if (t === 'claro') document.documentElement.dataset.theme = 'light';
+      if (t === 'oscuro') document.documentElement.dataset.theme = 'dark';
+    } catch (e) {}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400..500&display=swap">
+  <link rel="stylesheet" href="css/estilos.css">
+  <script type="module" src="js/app.js"></script>
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-logo" viewBox="80 80 800 800">
+      <rect x="80" y="80" width="800" height="800" rx="180" fill="#DCE3DA"/>
+      <path d="M352 284h255v60h-91v220h-73V344h-91z" fill="#18322B"/>
+      <path d="M469.5 564 535.5 564 557.5 592 491.5 592ZM504 603 563 603 565 606 570 610 579 614 592 618 608 622 623 626 637 630 648 634 657 638 665 642 670 646 674 650 677 654 679 658 680 662 679 666 676 670 671 674 661 678 640 682 600 685.5 565 683 536 679 518 675 505 671 494 667 486 663 479 659 474 655 470 651 466 647 464 644 529 644 530 646 534 650 539 654 547 658 563 662 580 664.5 596 662 605 658 606 654 604 650 600 646 592 642 582 638 569 634 554 630 541 626 530 622 521 618 515 614 511 610 507 606Z" fill="#ABB7AE"/>
+    </symbol>
+    <symbol id="i-luna" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+    <symbol id="i-sol" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></g></symbol>
+    <symbol id="i-compartir" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V3.5M7.5 8 12 3.5 16.5 8"/><path d="M5 12.5v6A2 2 0 0 0 7 20.5h10a2 2 0 0 0 2-2v-6"/></g></symbol>
+  </svg>
+
+  <header class="cabecera">
+    <a class="marca" href="./" aria-label="Trampantojo, inicio">
+      <svg class="marca-icono" aria-hidden="true"><use href="#i-logo"/></svg>
+      <span class="marca-texto">Trampantojo</span>
+    </a>
+    <div class="cabecera-acciones">
+      <button type="button" class="boton-icono" id="b-ayuda" aria-label="Cómo se juega"><span aria-hidden="true">?</span></button>
+      <button type="button" class="boton-icono" id="b-tema" aria-label="Cambiar a modo oscuro">
+        <svg class="icono-luna" aria-hidden="true"><use href="#i-luna"/></svg>
+        <svg class="icono-sol" aria-hidden="true"><use href="#i-sol"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main class="escena">
+    <!-- Carga -->
+    <section class="pantalla" id="p-carga" aria-busy="true">
+      <div class="cargando">
+        <svg class="caja-carga" aria-hidden="true"><use href="#i-logo"/></svg>
+        <p>Preparando el truco…</p>
+      </div>
+    </section>
+
+    <!-- Error -->
+    <section class="pantalla" id="p-error" hidden>
+      <h1 class="titulo" tabindex="-1" data-foco>El truco ha fallado</h1>
+      <p>No se han podido cargar las pistas (<code>trampantojo-pistas.json</code>).</p>
+      <p class="discreto">Si has abierto el archivo directamente con doble clic, el navegador bloquea la carga: sírvelo con un servidor local (lo explica el README).</p>
+      <button type="button" class="boton" id="b-reintentar">Reintentar</button>
+    </section>
+
+    <!-- Presentación / primera visita -->
+    <section class="pantalla" id="p-intro" hidden>
+      <div class="portada">
+        <svg class="portada-caja" aria-hidden="true"><use href="#i-logo"/></svg>
+        <h1 class="portada-titulo" tabindex="-1" data-foco>Trampantojo</h1>
+        <p class="portada-lema">Una pista críptica al día. Cada frase esconde otra.</p>
+      </div>
+      <div class="tarjeta tarjeta-texto">
+        <p>Como un <strong>trampantojo</strong>, cada pista engaña a la vista: por encima parece una frase normal; por debajo, esconde las instrucciones para construir la respuesta.</p>
+        <dl class="claves">
+          <div><dt><span class="muestra muestra-def">La definición</span></dt><dd>Está al principio o al final. Dice <em>qué</em> buscas.</dd></div>
+          <div><dt><span class="muestra muestra-ind">El juego de palabras</span></dt><dd>Anagramas, palabras ocultas, sumas… Dice <em>cómo</em> construirla.</dd></div>
+          <div><dt><span class="muestra muestra-num">(4)</span></dt><dd>El número de letras de la respuesta.</dd></div>
+        </dl>
+      </div>
+      <div class="acciones acciones-columna">
+        <button type="button" class="boton" id="b-empezar">Aprender con 5 pistas</button>
+        <button type="button" class="enlace" id="b-saltar-tutorial">Ya sé jugar: ir a la pista de hoy</button>
+      </div>
+    </section>
+
+    <!-- Juego -->
+    <section class="pantalla" id="p-juego" hidden>
+      <div class="pista-cabeza">
+        <span class="sobretitulo" id="j-etiqueta" tabindex="-1" data-foco></span>
+        <span class="dificultad" id="j-dificultad"></span>
+      </div>
+
+      <article class="tarjeta tarjeta-pista">
+        <p class="pista" id="j-pista"></p>
+        <ul class="leyenda" aria-label="Leyenda">
+          <li data-l="def">definición</li>
+          <li data-l="ind">indicador</li>
+          <li data-l="mat">materia prima</li>
+        </ul>
+      </article>
+
+      <div class="zona-juego" id="j-zona">
+        <aside class="nota" id="j-nota" hidden>
+          <span class="sobretitulo" id="j-nota-titulo"></span>
+          <p id="j-nota-texto"></p>
+        </aside>
+
+        <div class="revelacion" id="j-tipo" hidden>
+          <span class="sobretitulo">Tipo de juego</span>
+          <p><strong id="j-tipo-nombre"></strong> <span id="j-tipo-linea"></span></p>
+        </div>
+
+        <div class="casillas-zona" id="j-casillas-zona">
+          <div class="casillas" id="j-casillas" aria-hidden="true"></div>
+          <input id="j-entrada" class="entrada" type="text" inputmode="text"
+                 autocomplete="off" autocorrect="off" autocapitalize="characters" spellcheck="false"
+                 enterkeyhint="go" aria-describedby="j-ayuda-lectura">
+          <span class="solo-lectores" id="j-ayuda-lectura"></span>
+        </div>
+        <p class="mensaje" id="j-mensaje" aria-live="polite"></p>
+
+        <div class="acciones">
+          <button type="button" class="boton boton-secundario" id="j-ayuda">
+            <span class="boton-pre">Ayuda</span> <span id="j-ayuda-txt"></span>
+          </button>
+          <button type="button" class="boton" id="j-comprobar">Comprobar</button>
+        </div>
+        <p class="contador-ayudas" id="j-contador"></p>
+      </div>
+
+      <section class="desmontaje" id="j-desmontaje" hidden aria-labelledby="j-desmontaje-titulo">
+        <h2 class="sobretitulo sobretitulo-ornado" id="j-desmontaje-titulo">El desmontaje</h2>
+        <div class="escenario" id="j-escenario"></div>
+        <p class="rotulo" id="j-rotulo" aria-live="polite"></p>
+        <div class="solucion" id="j-solucion" hidden>
+          <p class="solucion-formula" id="j-sol-formula"></p>
+          <p class="solucion-extra" id="j-sol-extra"></p>
+        </div>
+        <div class="acciones">
+          <button type="button" class="enlace" id="j-saltar">Saltar animación</button>
+          <button type="button" class="boton" id="j-continuar" hidden>Continuar</button>
+        </div>
+      </section>
+    </section>
+
+    <!-- Fin del tutorial -->
+    <section class="pantalla" id="p-fin-tutorial" hidden>
+      <div class="portada portada-compacta">
+        <svg class="portada-caja" aria-hidden="true"><use href="#i-logo"/></svg>
+        <h1 class="titulo" tabindex="-1" data-foco>Ya sabes mirar dos veces</h1>
+      </div>
+      <div class="tarjeta tarjeta-texto">
+        <p>Has visto cinco trucos. En las pistas diarias aparecerán también la <strong>resta</strong> (quitar letras), el <strong>contenedor</strong> (una palabra dentro de otra) y las <strong>combinadas</strong>, que encadenan varios.</p>
+        <p>Si te atascas, pide ayuda. Siempre llegan en el mismo orden: primero se subraya la definición, después se revela el tipo de juego y, por último, se destapan letras.</p>
+      </div>
+      <div class="acciones acciones-columna">
+        <button type="button" class="boton" id="b-ir-hoy">Ver la pista de hoy</button>
+      </div>
+    </section>
+
+    <!-- Resultado del día -->
+    <section class="pantalla" id="p-final" hidden>
+      <header class="final-cabeza">
+        <p class="sobretitulo" id="f-numero" tabindex="-1" data-foco></p>
+        <p class="final-fecha" id="f-fecha"></p>
+      </header>
+      <div class="casillas casillas-final" id="f-respuesta"></div>
+      <p class="final-pista" id="f-pista"></p>
+      <p class="final-ayudas" id="f-ayudas"></p>
+
+      <div class="tarjeta racha">
+        <div class="racha-dato">
+          <span class="cifra" id="f-racha">0</span>
+          <span class="racha-etiqueta" id="f-racha-etiqueta">días de racha</span>
+        </div>
+        <div class="racha-dato">
+          <span class="cifra cifra-secundaria" id="f-mejor">0</span>
+          <span class="racha-etiqueta">mejor racha</span>
+        </div>
+        <ol class="semana" id="f-semana" aria-label="Últimos siete días"></ol>
+      </div>
+
+      <div class="acciones acciones-columna">
+        <button type="button" class="boton" id="f-compartir">
+          <svg class="icono-boton" aria-hidden="true"><use href="#i-compartir"/></svg>
+          Compartir resultado
+        </button>
+        <p class="aviso" id="f-aviso" aria-live="polite"></p>
+      </div>
+
+      <div class="cuenta">
+        <span class="sobretitulo">Siguiente pista en</span>
+        <time class="cuenta-reloj" id="f-cuenta">--:--:--</time>
+      </div>
+
+      <div class="acciones acciones-columna">
+        <button type="button" class="enlace" id="f-repetir">Ver otra vez el desmontaje</button>
+      </div>
+    </section>
+  </main>
+
+  <dialog class="dialogo" id="d-ayuda" aria-labelledby="d-ayuda-titulo">
+    <div class="dialogo-cuerpo">
+      <div class="dialogo-cabeza">
+        <h2 class="titulo" id="d-ayuda-titulo">Cómo se juega</h2>
+        <button type="button" class="boton-icono" id="d-cerrar" aria-label="Cerrar"><span aria-hidden="true">×</span></button>
+      </div>
+      <p>Cada día hay una pista nueva. Tiene dos lecturas: la de la superficie, que parece una frase normal, y la oculta, que explica cómo se construye la respuesta.</p>
+      <p>Toda pista tiene una <span class="muestra muestra-def">definición</span>, al principio o al final, y un <span class="muestra muestra-ind">juego de palabras</span>, señalado casi siempre por un <em>indicador</em>. El número entre paréntesis es la longitud de la respuesta.</p>
+      <p>No importan las tildes ni las mayúsculas (á = a), pero la <strong>ñ</strong> es una letra distinta de la n.</p>
+      <h3 class="sobretitulo">Los trucos</h3>
+      <dl class="glosario" id="d-glosario"></dl>
+      <h3 class="sobretitulo">Las ayudas</h3>
+      <ol class="lista-ayudas">
+        <li>Subrayar la definición.</li>
+        <li>Revelar el tipo de juego.</li>
+        <li>Destapar una letra (puedes repetirla).</li>
+      </ol>
+      <p class="discreto">Al compartir tu resultado solo se ve cuántas ayudas usaste, nunca la respuesta.</p>
+      <div class="acciones acciones-columna">
+        <button type="button" class="boton boton-secundario" id="d-tutorial">Repetir el tutorial</button>
+      </div>
+    </div>
+  </dialog>
+</body>
+</html>

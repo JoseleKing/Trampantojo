@@ -1,0 +1,149 @@
+{
+  "juego": "Trampantojo",
+  "version": "prototipo-1",
+  "notas": "Comparar respuestas ignorando tildes y mayúsculas; la ñ cuenta como letra distinta. 'definicion' es el fragmento exacto de la pista que se subraya con la primera ayuda.",
+  "tutorial": [
+    {
+      "id": "T1",
+      "tipo": "anagrama",
+      "pista": "Roma revuelta es pasión",
+      "longitud": 4,
+      "respuesta": "AMOR",
+      "definicion": "pasión",
+      "indicador": "revuelta",
+      "desmontaje": "ROMA desordenada → AMOR",
+      "explicacion": "Las palabras como 'revuelta', 'mal hecho' o 'alborotada' indican que hay que desordenar letras."
+    },
+    {
+      "id": "T2",
+      "tipo": "oculta",
+      "pista": "Metal precioso escondido en gato rojo",
+      "longitud": 3,
+      "respuesta": "ORO",
+      "definicion": "Metal precioso",
+      "indicador": "escondido en",
+      "desmontaje": "gat-ORO-jo",
+      "explicacion": "La respuesta está escrita, letra a letra, dentro de la propia pista."
+    },
+    {
+      "id": "T3",
+      "tipo": "suma",
+      "pista": "Astro y cubo de juego forman un militar",
+      "longitud": 7,
+      "respuesta": "SOLDADO",
+      "definicion": "un militar",
+      "indicador": "forman",
+      "desmontaje": "SOL + DADO",
+      "explicacion": "Se juntan dos o más palabras, una detrás de otra, para formar la respuesta."
+    },
+    {
+      "id": "T4",
+      "tipo": "inversion",
+      "pista": "Oído al revés da rencor",
+      "longitud": 4,
+      "respuesta": "ODIO",
+      "definicion": "rencor",
+      "indicador": "al revés",
+      "desmontaje": "OIDO leído hacia atrás → ODIO",
+      "explicacion": "'Al revés', 'de vuelta' o 'marcha atrás' piden leer una palabra de derecha a izquierda."
+    },
+    {
+      "id": "T5",
+      "tipo": "homofono",
+      "pista": "Suena a saludo lo que rompe en la playa",
+      "longitud": 3,
+      "respuesta": "OLA",
+      "definicion": "lo que rompe en la playa",
+      "indicador": "suena a",
+      "desmontaje": "HOLA suena igual que OLA",
+      "explicacion": "La respuesta se pronuncia igual que otra palabra, aunque se escriba distinto."
+    }
+  ],
+  "dias": [
+    {
+      "dia": 1, "dificultad": 1, "tipo": "anagrama",
+      "pista": "Ramo desordenado, ciudad eterna", "longitud": 4,
+      "respuesta": "ROMA", "definicion": "ciudad eterna", "indicador": "desordenado",
+      "desmontaje": "RAMO desordenado → ROMA"
+    },
+    {
+      "dia": 2, "dificultad": 1, "tipo": "oculta",
+      "pista": "Ave oculta en la tapa torcida", "longitud": 4,
+      "respuesta": "PATO", "definicion": "Ave", "indicador": "oculta en",
+      "desmontaje": "ta-PA TO-rcida"
+    },
+    {
+      "dia": 3, "dificultad": 1, "tipo": "suma",
+      "pista": "Pan y parte del pie forman una prenda", "longitud": 8,
+      "respuesta": "PANTALÓN", "definicion": "una prenda", "indicador": "forman",
+      "desmontaje": "PAN + TALÓN"
+    },
+    {
+      "dia": 4, "dificultad": 2, "tipo": "inversion",
+      "pista": "Asir al revés provoca carcajadas", "longitud": 4,
+      "respuesta": "RISA", "definicion": "carcajadas", "indicador": "al revés",
+      "desmontaje": "ASIR leído hacia atrás → RISA"
+    },
+    {
+      "dia": 5, "dificultad": 2, "tipo": "homofono",
+      "pista": "Suena a vaca lo que va en el techo del coche", "longitud": 4,
+      "respuesta": "BACA", "definicion": "lo que va en el techo del coche", "indicador": "Suena a",
+      "desmontaje": "VACA suena igual que BACA"
+    },
+    {
+      "dia": 6, "dificultad": 2, "tipo": "anagrama",
+      "pista": "Alergia mal curada trae felicidad", "longitud": 7,
+      "respuesta": "ALEGRÍA", "definicion": "felicidad", "indicador": "mal curada",
+      "desmontaje": "ALERGIA desordenada → ALEGRÍA"
+    },
+    {
+      "dia": 7, "dificultad": 3, "tipo": "oculta",
+      "pista": "Capital escondida en una sopa risueña", "longitud": 5,
+      "respuesta": "PARÍS", "definicion": "Capital", "indicador": "escondida en",
+      "desmontaje": "so-PA RIS-ueña"
+    },
+    {
+      "dia": 8, "dificultad": 3, "tipo": "resta",
+      "pista": "Brazo sin erre es un órgano", "longitud": 4,
+      "respuesta": "BAZO", "definicion": "un órgano", "indicador": "sin erre",
+      "desmontaje": "BRAZO − R → BAZO"
+    },
+    {
+      "dia": 9, "dificultad": 3, "tipo": "inversion",
+      "pista": "Bestia que sale al darle la vuelta a una lámina", "longitud": 6,
+      "respuesta": "ANIMAL", "definicion": "Bestia", "indicador": "darle la vuelta",
+      "desmontaje": "LAMINA leída hacia atrás → ANIMAL"
+    },
+    {
+      "dia": 10, "dificultad": 3, "tipo": "homofono",
+      "pista": "Suena a bonito el pelo fino", "longitud": 5,
+      "respuesta": "VELLO", "definicion": "el pelo fino", "indicador": "Suena a",
+      "desmontaje": "BELLO (bonito) suena igual que VELLO"
+    },
+    {
+      "dia": 11, "dificultad": 4, "tipo": "contenedor",
+      "pista": "Mi entrada en lo cano abre una senda", "longitud": 6,
+      "respuesta": "CAMINO", "definicion": "una senda", "indicador": "entrada en",
+      "desmontaje": "CA(MI)NO: MI metido dentro de CANO"
+    },
+    {
+      "dia": 12, "dificultad": 4, "tipo": "suma",
+      "pista": "Mari se queda quieta para la foto: insecto", "longitud": 8,
+      "respuesta": "MARIPOSA", "definicion": "insecto", "indicador": "(implícito)",
+      "desmontaje": "MARI + POSA"
+    },
+    {
+      "dia": 13, "dificultad": 4, "tipo": "anagrama",
+      "pista": "Monja alborotada acaba siendo ibérico", "longitud": 5,
+      "respuesta": "JAMÓN", "definicion": "ibérico", "indicador": "alborotada",
+      "desmontaje": "MONJA desordenada → JAMÓN"
+    },
+    {
+      "dia": 14, "dificultad": 5, "tipo": "combinada",
+      "pista": "Saco de vuelta con un círculo: el final del día", "longitud": 5,
+      "respuesta": "OCASO", "definicion": "el final del día", "indicador": "de vuelta / con",
+      "desmontaje": "SACO al revés (OCAS) + O (el círculo)",
+      "nota": "Introduce la convención críptica de que 'círculo' o 'anillo' equivale a la letra O."
+    }
+  ]
+}
