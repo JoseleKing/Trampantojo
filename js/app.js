@@ -357,6 +357,12 @@ function registrar(n, ayudas) {
   estado.racha = rachaActual(n);
   estado.mejorRacha = Math.max(estado.mejorRacha || 0, estado.racha);
   guardar();
+  avisarAlmanaque(n);
+}
+
+/** Con la pista de hoy resuelta, la mano ☜ marca Trampantojo como «Hecho» en Almanaque. */
+function avisarAlmanaque(n) {
+  if (!prueba && n === numeroDeHoy()) window.almanaqueHecho?.();
 }
 
 function rotular(html) {
@@ -467,6 +473,7 @@ function mostrarFinal(n) {
   turno++;
   const r = estado.historial[n];
   if (!r) { abrirHoy(); return; }
+  avisarAlmanaque(n);
   const p = pistaDe(n);
   const hoy = diaActual();
 
