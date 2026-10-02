@@ -155,7 +155,8 @@ function jugar(p, { modo, n = null, indice = 0, repetir = false }) {
   lon.textContent = `(${p.longitud || sol.length})`;
   pistaEl.append(' ', lon);
 
-  // Nota del tutorial
+  // Nota del tutorial (y, fuera de él, el acceso al tutorial al pie)
+  $('j-pie').hidden = modo === 'tutorial';
   const nota = $('j-nota');
   nota.hidden = modo !== 'tutorial' || !p.explicacion;
   if (!nota.hidden) {
@@ -591,6 +592,9 @@ function abrirHoy() {
 }
 
 function empezarTutorial() {
+  // La portada solo se ve una vez: empezar el tutorial cuenta, aunque se deje a medias.
+  estado.tutorial = true;
+  guardar();
   jugar(datos.tutorial[0], { modo: 'tutorial', indice: 0 });
 }
 
@@ -645,6 +649,7 @@ function enlazar() {
   });
 
   $('b-empezar').addEventListener('click', empezarTutorial);
+  document.querySelectorAll('[data-tutorial]').forEach((b) => b.addEventListener('click', empezarTutorial));
   $('b-saltar-tutorial').addEventListener('click', () => { estado.tutorial = true; guardar(); abrirHoy(); });
   $('b-ir-hoy').addEventListener('click', abrirHoy);
   $('b-reintentar').addEventListener('click', () => location.reload());
@@ -700,6 +705,11 @@ async function iniciar() {
   }
 
   prepararGlosario();
+  // Quien ya ha jugado algún día no necesita la portada, aunque no pasara por ella.
+  if (!estado.tutorial && (Object.keys(estado.historial).length || estado.enCurso)) {
+    estado.tutorial = true;
+    guardar();
+  }
   if (!estado.tutorial) mostrar('p-intro');
   else abrirHoy();
   ocultarPortada(inicio);
