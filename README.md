@@ -29,7 +29,7 @@ Parámetros útiles para probar:
 
 | URL | Qué hace |
 | --- | --- |
-| `?dia=7` | Juega la pista n.º 7 en modo prueba (no guarda nada) |
+| `?dia=7` | Juega el reto n.º 7 en modo prueba (no guarda nada) |
 | `?reiniciar` | Borra el progreso guardado y vuelve a la primera visita |
 
 ## Configuración

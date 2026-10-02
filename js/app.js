@@ -136,7 +136,7 @@ function jugar(p, { modo, n = null, indice = 0, repetir = false }) {
     $('j-etiqueta').textContent = `Tutorial · ${indice + 1} de ${datos.tutorial.length}`;
     dificultad(0);
   } else {
-    $('j-etiqueta').textContent = `Pista n.º ${n}${prueba ? ' · prueba' : ''}`;
+    $('j-etiqueta').textContent = `Reto n.º ${n}${prueba ? ' · prueba' : ''}`;
     dificultad(p.dificultad);
   }
 
@@ -361,7 +361,7 @@ function registrar(n, ayudas) {
   avisarAlmanaque(n);
 }
 
-/** Con la pista de hoy resuelta, la mano ☜ marca Trampantojo como «Hecho» en Almanaque. */
+/** Con el reto de hoy resuelto, la mano ☜ marca Trampantojo como «Hecho» en Almanaque. */
 function avisarAlmanaque(n) {
   if (!prueba && n === numeroDeHoy()) window.almanaqueHecho?.();
 }
@@ -497,7 +497,7 @@ function mostrarFinal(n) {
   resp.setAttribute('role', 'img');
 
   $('f-pista').textContent = `${p.pista} (${p.longitud})`;
-  $('f-ayudas').textContent = r.ayudas === 0 ? '🟢 Resuelta sin ayudas' : `${'🟡'.repeat(Math.min(r.ayudas, 10))} Resuelta con ${plural(r.ayudas, 'ayuda', 'ayudas')}`;
+  $('f-ayudas').textContent = r.ayudas === 0 ? '🟢 Resuelto sin ayudas' : `${'🟡'.repeat(Math.min(r.ayudas, 10))} Resuelto con ${plural(r.ayudas, 'ayuda', 'ayudas')}`;
 
   const racha = rachaActual(hoy);
   $('f-racha').textContent = racha;
@@ -514,7 +514,7 @@ function mostrarFinal(n) {
     li.className = h ? (h.ayudas ? 'con-ayudas' : 'limpia') : 'vacia';
     if (d === n) li.classList.add('hoy');
     li.innerHTML = `<span class="punto" aria-hidden="true"></span><span class="letra-dia">${fmt.format(fechaDe(d)).toUpperCase()}</span>`;
-    li.setAttribute('aria-label', `#${d}: ${h ? (h.ayudas ? `resuelta con ${plural(h.ayudas, 'ayuda', 'ayudas')}` : 'resuelta sin ayudas') : 'sin resolver'}`);
+    li.setAttribute('aria-label', `#${d}: ${h ? (h.ayudas ? `resuelto con ${plural(h.ayudas, 'ayuda', 'ayudas')}` : 'resuelto sin ayudas') : 'sin resolver'}`);
     semana.append(li);
   }
 
