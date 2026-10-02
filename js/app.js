@@ -383,6 +383,7 @@ async function desmontar() {
   $('j-desmontaje').hidden = false;
   $('j-solucion').hidden = true;
   $('j-continuar').hidden = true;
+  $('j-saltar-tutorial').hidden = true;
   $('j-saltar').hidden = false;
   $('j-rotulo').textContent = '';
   escenario.reiniciar();
@@ -435,6 +436,7 @@ async function desmontar() {
     ? (partida.indice < datos.tutorial.length - 1 ? 'Siguiente truco' : 'Terminar el tutorial')
     : 'Ver mi resultado';
   continuar.hidden = false;
+  $('j-saltar-tutorial').hidden = partida.modo !== 'tutorial' || partida.indice >= datos.tutorial.length - 1;
   continuar.focus({ preventScroll: true });
   saltando = false;
 }
@@ -644,6 +646,7 @@ function enlazar() {
   $('j-ayuda').addEventListener('click', pedirAyuda);
   $('j-saltar').addEventListener('click', saltarAnimacion);
   $('j-continuar').addEventListener('click', continuar);
+  $('j-saltar-tutorial').addEventListener('click', abrirHoy);
   $('j-casillas').addEventListener('animationend', (e) => {
     if (e.animationName === 'sacudida') $('j-casillas').classList.remove('sacude');
   });
