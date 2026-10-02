@@ -275,6 +275,7 @@ button { font: inherit; color: inherit; }
   box-shadow: none;
 }
 .boton-secundario:hover { background: var(--papel-alto); }
+a.boton { text-decoration: none; }
 
 #j-ayuda { flex-direction: column; gap: 1px; line-height: 1.2; padding-block: 7px; font-size: .95rem; }
 .boton-pre {
