@@ -155,6 +155,16 @@ function jugar(p, { modo, n = null, indice = 0, repetir = false }) {
   lon.textContent = `(${p.longitud || sol.length})`;
   pistaEl.append(' ', lon);
 
+  // Aviso de que esto es el tutorial, con su progreso
+  $('j-aviso').hidden = modo !== 'tutorial';
+  if (modo === 'tutorial') {
+    $('j-aviso-progreso').replaceChildren(...datos.tutorial.map((_, i) => {
+      const li = document.createElement('li');
+      li.className = i < indice ? 'hecha' : i === indice ? 'actual' : '';
+      return li;
+    }));
+  }
+
   // Nota del tutorial (y, fuera de él, el acceso al tutorial al pie)
   $('j-pie').hidden = modo === 'tutorial';
   const nota = $('j-nota');
@@ -647,6 +657,7 @@ function enlazar() {
   $('j-saltar').addEventListener('click', saltarAnimacion);
   $('j-continuar').addEventListener('click', continuar);
   $('j-saltar-tutorial').addEventListener('click', abrirHoy);
+  $('j-aviso-saltar').addEventListener('click', abrirHoy);
   $('j-casillas').addEventListener('animationend', (e) => {
     if (e.animationName === 'sacudida') $('j-casillas').classList.remove('sacude');
   });

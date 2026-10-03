@@ -90,13 +90,23 @@
         </dl>
       </div>
       <div class="acciones acciones-columna">
-        <button type="button" class="boton" id="b-empezar">Aprender con 5 palabras</button>
+        <button type="button" class="boton" id="b-empezar">Empezar el tutorial (5 pistas)</button>
+        <p class="acciones-nota">Un tutorial rápido antes del reto de hoy.</p>
         <button type="button" class="enlace" id="b-saltar-tutorial">Ya sé jugar: ir al reto de hoy</button>
       </div>
     </section>
 
     <!-- Juego -->
     <section class="pantalla" id="p-juego" hidden>
+      <aside class="aviso-tutorial" id="j-aviso" hidden>
+        <div class="aviso-cabeza">
+          <p class="aviso-titulo">Estás en el tutorial</p>
+          <ol class="aviso-progreso" id="j-aviso-progreso" aria-hidden="true"></ol>
+        </div>
+        <p>Aún no es el reto de hoy: son pistas de práctica para aprender los trucos y no cuentan para tu racha.</p>
+        <button type="button" class="enlace" id="j-aviso-saltar">Saltar el tutorial e ir al reto de hoy</button>
+      </aside>
+
       <div class="pista-cabeza">
         <span class="sobretitulo" id="j-etiqueta" tabindex="-1" data-foco></span>
         <span class="dificultad" id="j-dificultad"></span>
