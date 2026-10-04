@@ -1,6 +1,6 @@
 # Trampantojo
 
-Un juego diario de pistas crípticas en español. Como un trampantojo, cada pista engaña a la vista: por encima parece una frase normal; por debajo, esconde cómo se construye la respuesta.
+Un juego diario de pistas crípticas en español: tres retos al día, de menos a más difícil. Como un trampantojo, cada pista engaña a la vista: por encima parece una frase normal; por debajo, esconde cómo se construye la respuesta.
 
 Web estática (HTML, CSS y JavaScript sin dependencias ni compilación), pensada para el móvil.
 
@@ -12,7 +12,7 @@ css/estilos.css            Identidad visual, modo claro y oscuro
 js/app.js                  Flujo del juego, progreso, compartir (FECHA_INICIO está arriba del todo)
 js/desmontaje.js           Análisis de cada pista y animación del desmontaje
 js/texto.js                Comparación sin tildes (con ñ) y búsqueda en la pista
-trampantojo-pistas.json    Todo el contenido: tutorial y pistas diarias
+trampantojo-pistas.json    Todo el contenido: tutorial y pistas diarias (tres por día)
 ```
 
 ## Probarlo en local
@@ -29,13 +29,13 @@ Parámetros útiles para probar:
 
 | URL | Qué hace |
 | --- | --- |
-| `?dia=7` | Juega el reto n.º 7 en modo prueba (no guarda nada) |
+| `?dia=7` | Juega los retos del día n.º 7 en modo prueba (no guarda nada) |
 | `?reiniciar` | Borra el progreso guardado y vuelve a la primera visita |
 
 ## Configuración
 
-- `FECHA_INICIO` en `js/app.js`: el día que corresponde a la pista n.º 1 (`AAAA-MM-DD`, hora local). Cuando se acaban las pistas del JSON, el ciclo vuelve a empezar; el número que se comparte sigue creciendo (#15, #16…).
-- Para añadir pistas, edita el JSON. El desmontaje se genera a partir de `tipo`, `pista`, `definicion`, `indicador` y `desmontaje`; si algún dato no encaja, la respuesta aparece letra a letra en lugar de la animación específica.
+- `FECHA_INICIO` en `js/app.js`: el día que corresponde al día n.º 1 del JSON (`AAAA-MM-DD`, hora local). Cuando se acaban los días del JSON, el ciclo vuelve a empezar; el número que se comparte sigue creciendo (#15, #16…).
+- Para añadir pistas, edita el JSON: cada día de `dias` lleva sus tres retos en `pistas`, ordenados de menos a más difícil. El desmontaje se genera a partir de `tipo`, `pista`, `definicion`, `indicador` y `desmontaje`; si algún dato no encaja, la respuesta aparece letra a letra en lugar de la animación específica.
 
 ## Publicarlo en GitHub Pages
 

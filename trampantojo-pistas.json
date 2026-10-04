@@ -1,7 +1,7 @@
 {
   "juego": "Trampantojo",
-  "version": "prototipo-1",
-  "notas": "Comparar respuestas ignorando tildes y mayúsculas; la ñ cuenta como letra distinta. 'definicion' es el fragmento exacto de la pista que se subraya con la primera ayuda.",
+  "version": "prototipo-2",
+  "notas": "Comparar respuestas ignorando tildes y mayúsculas; la ñ cuenta como letra distinta. 'definicion' es el fragmento exacto de la pista que se subraya con la primera ayuda. Cada día tiene tres pistas, de menos a más difícil.",
   "tutorial": [
     {
       "id": "T1",
@@ -61,89 +61,331 @@
   ],
   "dias": [
     {
-      "dia": 1, "dificultad": 1, "tipo": "anagrama",
-      "pista": "Ramo desordenado, ciudad eterna", "longitud": 4,
-      "respuesta": "ROMA", "definicion": "ciudad eterna", "indicador": "desordenado",
-      "desmontaje": "RAMO desordenado → ROMA"
+      "dia": 1,
+      "pistas": [
+        {
+          "dificultad": 1, "tipo": "anagrama",
+          "pista": "Ramo desordenado, ciudad eterna", "longitud": 4,
+          "respuesta": "ROMA", "definicion": "ciudad eterna", "indicador": "desordenado",
+          "desmontaje": "RAMO desordenado → ROMA"
+        },
+        {
+          "dificultad": 2, "tipo": "oculta",
+          "pista": "Felino escondido en la amiga tozuda", "longitud": 4,
+          "respuesta": "GATO", "definicion": "Felino", "indicador": "escondido en",
+          "desmontaje": "ami-GA TO-zuda"
+        },
+        {
+          "dificultad": 3, "tipo": "contenedor",
+          "pista": "Pan metido en la cama: suena en la torre", "longitud": 7,
+          "respuesta": "CAMPANA", "definicion": "suena en la torre", "indicador": "metido en",
+          "desmontaje": "CAM(PAN)A: PAN metido dentro de CAMA"
+        }
+      ]
     },
     {
-      "dia": 2, "dificultad": 1, "tipo": "oculta",
-      "pista": "Ave oculta en la tapa torcida", "longitud": 4,
-      "respuesta": "PATO", "definicion": "Ave", "indicador": "oculta en",
-      "desmontaje": "ta-PA TO-rcida"
+      "dia": 2,
+      "pistas": [
+        {
+          "dificultad": 1, "tipo": "oculta",
+          "pista": "Ave oculta en la tapa torcida", "longitud": 4,
+          "respuesta": "PATO", "definicion": "Ave", "indicador": "oculta en",
+          "desmontaje": "ta-PA TO-rcida"
+        },
+        {
+          "dificultad": 2, "tipo": "resta",
+          "pista": "Blanco sin ele, asiento del parque", "longitud": 5,
+          "respuesta": "BANCO", "definicion": "asiento del parque", "indicador": "sin ele",
+          "desmontaje": "BLANCO − L → BANCO"
+        },
+        {
+          "dificultad": 3, "tipo": "anagrama",
+          "pista": "Termas en ruinas: un día de la semana", "longitud": 6,
+          "respuesta": "MARTES", "definicion": "un día de la semana", "indicador": "en ruinas",
+          "desmontaje": "TERMAS desordenadas → MARTES"
+        }
+      ]
     },
     {
-      "dia": 3, "dificultad": 1, "tipo": "suma",
-      "pista": "Pan y parte del pie forman una prenda", "longitud": 8,
-      "respuesta": "PANTALÓN", "definicion": "una prenda", "indicador": "forman",
-      "desmontaje": "PAN + TALÓN"
+      "dia": 3,
+      "pistas": [
+        {
+          "dificultad": 1, "tipo": "suma",
+          "pista": "Pan y parte del pie forman una prenda", "longitud": 8,
+          "respuesta": "PANTALÓN", "definicion": "una prenda", "indicador": "forman",
+          "desmontaje": "PAN + TALÓN"
+        },
+        {
+          "dificultad": 2, "tipo": "inversion",
+          "pista": "Alas de vuelta en el salón", "longitud": 4,
+          "respuesta": "SALA", "definicion": "el salón", "indicador": "de vuelta",
+          "desmontaje": "ALAS leído hacia atrás → SALA"
+        },
+        {
+          "dificultad": 3, "tipo": "homofono",
+          "pista": "Suena a tiro el suceso", "longitud": 5,
+          "respuesta": "HECHO", "definicion": "el suceso", "indicador": "Suena a",
+          "desmontaje": "ECHO (tiro) suena igual que HECHO",
+          "nota": "«Echo» es del verbo «echar»: «tiro». La hache de HECHO no suena."
+        }
+      ]
     },
     {
-      "dia": 4, "dificultad": 2, "tipo": "inversion",
-      "pista": "Asir al revés provoca carcajadas", "longitud": 4,
-      "respuesta": "RISA", "definicion": "carcajadas", "indicador": "al revés",
-      "desmontaje": "ASIR leído hacia atrás → RISA"
+      "dia": 4,
+      "pistas": [
+        {
+          "dificultad": 2, "tipo": "inversion",
+          "pista": "Asir al revés provoca carcajadas", "longitud": 4,
+          "respuesta": "RISA", "definicion": "carcajadas", "indicador": "al revés",
+          "desmontaje": "ASIR leído hacia atrás → RISA"
+        },
+        {
+          "dificultad": 2, "tipo": "anagrama",
+          "pista": "Grito desgarrado por un cereal", "longitud": 5,
+          "respuesta": "TRIGO", "definicion": "un cereal", "indicador": "desgarrado",
+          "desmontaje": "GRITO desordenado → TRIGO"
+        },
+        {
+          "dificultad": 3, "tipo": "suma",
+          "pista": "Brinca cerros este insecto", "longitud": 11,
+          "respuesta": "SALTAMONTES", "definicion": "este insecto", "indicador": "(implícito)",
+          "desmontaje": "SALTA (brinca) + MONTES (cerros)"
+        }
+      ]
     },
     {
-      "dia": 5, "dificultad": 2, "tipo": "homofono",
-      "pista": "Suena a vaca lo que va en el techo del coche", "longitud": 4,
-      "respuesta": "BACA", "definicion": "lo que va en el techo del coche", "indicador": "Suena a",
-      "desmontaje": "VACA suena igual que BACA"
+      "dia": 5,
+      "pistas": [
+        {
+          "dificultad": 1, "tipo": "oculta",
+          "pista": "Animal de lidia escondido en el pato rosado", "longitud": 4,
+          "respuesta": "TORO", "definicion": "Animal de lidia", "indicador": "escondido en",
+          "desmontaje": "pa-TO RO-sado"
+        },
+        {
+          "dificultad": 2, "tipo": "homofono",
+          "pista": "Suena a vaca lo que va en el techo del coche", "longitud": 4,
+          "respuesta": "BACA", "definicion": "lo que va en el techo del coche", "indicador": "Suena a",
+          "desmontaje": "VACA suena igual que BACA"
+        },
+        {
+          "dificultad": 3, "tipo": "resta",
+          "pista": "Plata decapitada: envase de conservas", "longitud": 4,
+          "respuesta": "LATA", "definicion": "envase de conservas", "indicador": "decapitada",
+          "desmontaje": "PLATA − P → LATA",
+          "nota": "«Decapitada» quita la cabeza, es decir, la primera letra."
+        }
+      ]
     },
     {
-      "dia": 6, "dificultad": 2, "tipo": "anagrama",
-      "pista": "Alergia mal curada trae felicidad", "longitud": 7,
-      "respuesta": "ALEGRÍA", "definicion": "felicidad", "indicador": "mal curada",
-      "desmontaje": "ALERGIA desordenada → ALEGRÍA"
+      "dia": 6,
+      "pistas": [
+        {
+          "dificultad": 1, "tipo": "resta",
+          "pista": "Perla sin ele: una fruta", "longitud": 4,
+          "respuesta": "PERA", "definicion": "una fruta", "indicador": "sin ele",
+          "desmontaje": "PERLA − L → PERA"
+        },
+        {
+          "dificultad": 2, "tipo": "anagrama",
+          "pista": "Alergia mal curada trae felicidad", "longitud": 7,
+          "respuesta": "ALEGRÍA", "definicion": "felicidad", "indicador": "mal curada",
+          "desmontaje": "ALERGIA desordenada → ALEGRÍA"
+        },
+        {
+          "dificultad": 3, "tipo": "inversion",
+          "pista": "Zorra al revés, base de la paella", "longitud": 5,
+          "respuesta": "ARROZ", "definicion": "base de la paella", "indicador": "al revés",
+          "desmontaje": "ZORRA leída hacia atrás → ARROZ"
+        }
+      ]
     },
     {
-      "dia": 7, "dificultad": 3, "tipo": "oculta",
-      "pista": "Capital escondida en una sopa risueña", "longitud": 5,
-      "respuesta": "PARÍS", "definicion": "Capital", "indicador": "escondida en",
-      "desmontaje": "so-PA RIS-ueña"
+      "dia": 7,
+      "pistas": [
+        {
+          "dificultad": 2, "tipo": "anagrama",
+          "pista": "Patria agitada da un corsario", "longitud": 6,
+          "respuesta": "PIRATA", "definicion": "un corsario", "indicador": "agitada",
+          "desmontaje": "PATRIA desordenada → PIRATA"
+        },
+        {
+          "dificultad": 3, "tipo": "oculta",
+          "pista": "Capital escondida en una sopa risueña", "longitud": 5,
+          "respuesta": "PARÍS", "definicion": "Capital", "indicador": "escondida en",
+          "desmontaje": "so-PA RIS-ueña"
+        },
+        {
+          "dificultad": 4, "tipo": "suma",
+          "pista": "Arma de Cupido junto a parte del ojo: sale tras la lluvia", "longitud": 8,
+          "respuesta": "ARCOÍRIS", "definicion": "sale tras la lluvia", "indicador": "junto a",
+          "desmontaje": "ARCO (arma de Cupido) + IRIS (parte del ojo)"
+        }
+      ]
     },
     {
-      "dia": 8, "dificultad": 3, "tipo": "resta",
-      "pista": "Brazo sin erre es un órgano", "longitud": 4,
-      "respuesta": "BAZO", "definicion": "un órgano", "indicador": "sin erre",
-      "desmontaje": "BRAZO − R → BAZO"
+      "dia": 8,
+      "pistas": [
+        {
+          "dificultad": 2, "tipo": "suma",
+          "pista": "Gira con el astro esta flor", "longitud": 7,
+          "respuesta": "GIRASOL", "definicion": "esta flor", "indicador": "con",
+          "desmontaje": "GIRA + SOL (el astro)"
+        },
+        {
+          "dificultad": 3, "tipo": "resta",
+          "pista": "Brazo sin erre es un órgano", "longitud": 4,
+          "respuesta": "BAZO", "definicion": "un órgano", "indicador": "sin erre",
+          "desmontaje": "BRAZO − R → BAZO"
+        },
+        {
+          "dificultad": 4, "tipo": "inversion",
+          "pista": "Laicos de vuelta, como ciertas redes", "longitud": 6,
+          "respuesta": "SOCIAL", "definicion": "como ciertas redes", "indicador": "de vuelta",
+          "desmontaje": "LAICOS leído hacia atrás → SOCIAL"
+        }
+      ]
     },
     {
-      "dia": 9, "dificultad": 3, "tipo": "inversion",
-      "pista": "Bestia que sale al darle la vuelta a una lámina", "longitud": 6,
-      "respuesta": "ANIMAL", "definicion": "Bestia", "indicador": "darle la vuelta",
-      "desmontaje": "LAMINA leída hacia atrás → ANIMAL"
+      "dia": 9,
+      "pistas": [
+        {
+          "dificultad": 2, "tipo": "oculta",
+          "pista": "Árbol oculto en el problema", "longitud": 5,
+          "respuesta": "ROBLE", "definicion": "Árbol", "indicador": "oculto en",
+          "desmontaje": "p-ROBLE-ma"
+        },
+        {
+          "dificultad": 3, "tipo": "inversion",
+          "pista": "Bestia que sale al darle la vuelta a una lámina", "longitud": 6,
+          "respuesta": "ANIMAL", "definicion": "Bestia", "indicador": "darle la vuelta",
+          "desmontaje": "LAMINA leída hacia atrás → ANIMAL"
+        },
+        {
+          "dificultad": 4, "tipo": "homofono",
+          "pista": "Suena a ola el arma de David", "longitud": 5,
+          "respuesta": "HONDA", "definicion": "el arma de David", "indicador": "Suena a",
+          "desmontaje": "ONDA (ola) suena igual que HONDA",
+          "nota": "Con una honda derribó David a Goliat."
+        }
+      ]
     },
     {
-      "dia": 10, "dificultad": 3, "tipo": "homofono",
-      "pista": "Suena a bonito el pelo fino", "longitud": 5,
-      "respuesta": "VELLO", "definicion": "el pelo fino", "indicador": "Suena a",
-      "desmontaje": "BELLO (bonito) suena igual que VELLO"
+      "dia": 10,
+      "pistas": [
+        {
+          "dificultad": 2, "tipo": "anagrama",
+          "pista": "Décimo roto para el doctor", "longitud": 6,
+          "respuesta": "MÉDICO", "definicion": "el doctor", "indicador": "roto",
+          "desmontaje": "DÉCIMO desordenado → MÉDICO"
+        },
+        {
+          "dificultad": 3, "tipo": "homofono",
+          "pista": "Suena a bonito el pelo fino", "longitud": 5,
+          "respuesta": "VELLO", "definicion": "el pelo fino", "indicador": "Suena a",
+          "desmontaje": "BELLO (bonito) suena igual que VELLO"
+        },
+        {
+          "dificultad": 4, "tipo": "combinada",
+          "pista": "Amor de vuelta con una negativa: lo era César", "longitud": 6,
+          "respuesta": "ROMANO", "definicion": "lo era César", "indicador": "de vuelta / con",
+          "desmontaje": "AMOR al revés (ROMA) + NO (una negativa)"
+        }
+      ]
     },
     {
-      "dia": 11, "dificultad": 4, "tipo": "contenedor",
-      "pista": "Mi entrada en lo cano abre una senda", "longitud": 6,
-      "respuesta": "CAMINO", "definicion": "una senda", "indicador": "entrada en",
-      "desmontaje": "CA(MI)NO: MI metido dentro de CANO"
+      "dia": 11,
+      "pistas": [
+        {
+          "dificultad": 2, "tipo": "oculta",
+          "pista": "Agua quieta escondida en el halago", "longitud": 4,
+          "respuesta": "LAGO", "definicion": "Agua quieta", "indicador": "escondida en",
+          "desmontaje": "ha-LAGO"
+        },
+        {
+          "dificultad": 3, "tipo": "homofono",
+          "pista": "Suena a ir a las urnas lo que hace el balón", "longitud": 5,
+          "respuesta": "BOTAR", "definicion": "lo que hace el balón", "indicador": "Suena a",
+          "desmontaje": "VOTAR (ir a las urnas) suena igual que BOTAR"
+        },
+        {
+          "dificultad": 4, "tipo": "contenedor",
+          "pista": "Mi entrada en lo cano abre una senda", "longitud": 6,
+          "respuesta": "CAMINO", "definicion": "una senda", "indicador": "entrada en",
+          "desmontaje": "CA(MI)NO: MI metido dentro de CANO"
+        }
+      ]
     },
     {
-      "dia": 12, "dificultad": 4, "tipo": "suma",
-      "pista": "Mari se queda quieta para la foto: insecto", "longitud": 8,
-      "respuesta": "MARIPOSA", "definicion": "insecto", "indicador": "(implícito)",
-      "desmontaje": "MARI + POSA"
+      "dia": 12,
+      "pistas": [
+        {
+          "dificultad": 2, "tipo": "resta",
+          "pista": "Mango sin ene es un ilusionista", "longitud": 4,
+          "respuesta": "MAGO", "definicion": "un ilusionista", "indicador": "sin ene",
+          "desmontaje": "MANGO − N → MAGO"
+        },
+        {
+          "dificultad": 3, "tipo": "anagrama",
+          "pista": "Las Cortes, reformadas, dan una zona", "longitud": 6,
+          "respuesta": "SECTOR", "definicion": "una zona", "indicador": "reformadas",
+          "desmontaje": "CORTES desordenadas → SECTOR"
+        },
+        {
+          "dificultad": 4, "tipo": "suma",
+          "pista": "Mari se queda quieta para la foto: insecto", "longitud": 8,
+          "respuesta": "MARIPOSA", "definicion": "insecto", "indicador": "(implícito)",
+          "desmontaje": "MARI + POSA"
+        }
+      ]
     },
     {
-      "dia": 13, "dificultad": 4, "tipo": "anagrama",
-      "pista": "Monja alborotada acaba siendo ibérico", "longitud": 5,
-      "respuesta": "JAMÓN", "definicion": "ibérico", "indicador": "alborotada",
-      "desmontaje": "MONJA desordenada → JAMÓN"
+      "dia": 13,
+      "pistas": [
+        {
+          "dificultad": 2, "tipo": "homofono",
+          "pista": "Suena a reza lo que marca el reloj", "longitud": 4,
+          "respuesta": "HORA", "definicion": "lo que marca el reloj", "indicador": "Suena a",
+          "desmontaje": "ORA (reza) suena igual que HORA"
+        },
+        {
+          "dificultad": 3, "tipo": "suma",
+          "pista": "Rostro junto a la verdura: va con la casa a cuestas", "longitud": 7,
+          "respuesta": "CARACOL", "definicion": "va con la casa a cuestas", "indicador": "junto a",
+          "desmontaje": "CARA (rostro) + COL (verdura)"
+        },
+        {
+          "dificultad": 4, "tipo": "anagrama",
+          "pista": "Monja alborotada acaba siendo ibérico", "longitud": 5,
+          "respuesta": "JAMÓN", "definicion": "ibérico", "indicador": "alborotada",
+          "desmontaje": "MONJA desordenada → JAMÓN"
+        }
+      ]
     },
     {
-      "dia": 14, "dificultad": 5, "tipo": "combinada",
-      "pista": "Saco de vuelta con un círculo: el final del día", "longitud": 5,
-      "respuesta": "OCASO", "definicion": "el final del día", "indicador": "de vuelta / con",
-      "desmontaje": "SACO al revés (OCAS) + O (el círculo)",
-      "nota": "Introduce la convención críptica de que 'círculo' o 'anillo' equivale a la letra O."
+      "dia": 14,
+      "pistas": [
+        {
+          "dificultad": 3, "tipo": "anagrama",
+          "pista": "Antro de mala muerte para un roedor", "longitud": 5,
+          "respuesta": "RATÓN", "definicion": "un roedor", "indicador": "de mala muerte",
+          "desmontaje": "ANTRO desordenado → RATÓN"
+        },
+        {
+          "dificultad": 4, "tipo": "contenedor",
+          "pista": "Ahora dentro del paso, el de la nariz roja", "longitud": 6,
+          "respuesta": "PAYASO", "definicion": "el de la nariz roja", "indicador": "dentro del",
+          "desmontaje": "PA(YA)SO: YA (ahora) metido dentro de PASO",
+          "nota": "«Ahora» es YA."
+        },
+        {
+          "dificultad": 5, "tipo": "combinada",
+          "pista": "Saco de vuelta con un círculo: el final del día", "longitud": 5,
+          "respuesta": "OCASO", "definicion": "el final del día", "indicador": "de vuelta / con",
+          "desmontaje": "SACO al revés (OCAS) + O (el círculo)",
+          "nota": "Introduce la convención críptica de que 'círculo' o 'anillo' equivale a la letra O."
+        }
+      ]
     }
   ]
 }

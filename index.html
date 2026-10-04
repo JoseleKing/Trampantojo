@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Trampantojo</title>
-  <meta name="description" content="Trampantojo: un reto críptico al día, en español. Cada frase esconde otra.">
+  <meta name="description" content="Trampantojo: tres retos crípticos al día, en español. Cada frase esconde otra.">
   <meta name="theme-color" content="#F3EAD8" id="meta-tema">
   <link rel="icon" href="img/logo.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
@@ -79,7 +79,7 @@
       <div class="portada">
         <svg class="portada-caja" aria-hidden="true"><use href="#i-logo"/></svg>
         <h1 class="portada-titulo" tabindex="-1" data-foco>Trampantojo</h1>
-        <p class="portada-lema">Un reto críptico al día. Cada frase esconde otra.</p>
+        <p class="portada-lema">Tres retos crípticos al día. Cada frase esconde otra.</p>
       </div>
       <div class="tarjeta tarjeta-texto">
         <p>Como un <strong>trampantojo</strong>, cada pista engaña a la vista: por encima parece una frase normal; por debajo, esconde las instrucciones para construir la respuesta.</p>
@@ -91,8 +91,8 @@
       </div>
       <div class="acciones acciones-columna">
         <button type="button" class="boton" id="b-empezar">Empezar el tutorial (5 pistas)</button>
-        <p class="acciones-nota">Un tutorial rápido antes del reto de hoy.</p>
-        <button type="button" class="enlace" id="b-saltar-tutorial">Ya sé jugar: ir al reto de hoy</button>
+        <p class="acciones-nota">Un tutorial rápido antes de los retos de hoy.</p>
+        <button type="button" class="enlace" id="b-saltar-tutorial">Ya sé jugar: ir a los retos de hoy</button>
       </div>
     </section>
 
@@ -103,8 +103,8 @@
           <p class="aviso-titulo">Estás en el tutorial</p>
           <ol class="aviso-progreso" id="j-aviso-progreso" aria-hidden="true"></ol>
         </div>
-        <p>Aún no es el reto de hoy: son pistas de práctica para aprender los trucos y no cuentan para tu racha.</p>
-        <button type="button" class="enlace" id="j-aviso-saltar">Saltar el tutorial e ir al reto de hoy</button>
+        <p>Aún no son los retos de hoy: son pistas de práctica para aprender los trucos y no cuentan para tu racha.</p>
+        <button type="button" class="enlace" id="j-aviso-saltar">Saltar el tutorial e ir a los retos de hoy</button>
       </aside>
 
       <div class="pista-cabeza">
@@ -181,7 +181,7 @@
         <p>Si te atascas, pide ayuda. Siempre llegan en el mismo orden: primero se subraya la definición, después se revela el tipo de juego y, por último, se destapan letras.</p>
       </div>
       <div class="acciones acciones-columna">
-        <button type="button" class="boton" id="b-ir-hoy">Ver el reto de hoy</button>
+        <button type="button" class="boton" id="b-ir-hoy">Ver los retos de hoy</button>
       </div>
     </section>
 
@@ -191,8 +191,7 @@
         <p class="sobretitulo" id="f-numero" tabindex="-1" data-foco></p>
         <p class="final-fecha" id="f-fecha"></p>
       </header>
-      <div class="casillas casillas-final" id="f-respuesta"></div>
-      <p class="final-pista" id="f-pista"></p>
+      <ol class="final-retos" id="f-retos"></ol>
       <p class="final-ayudas" id="f-ayudas"></p>
 
       <div class="tarjeta racha">
@@ -217,12 +216,11 @@
       </div>
 
       <div class="cuenta">
-        <span class="sobretitulo">Siguiente reto en</span>
+        <span class="sobretitulo">Nuevos retos en</span>
         <time class="cuenta-reloj" id="f-cuenta">--:--:--</time>
       </div>
 
       <div class="acciones acciones-columna">
-        <button type="button" class="enlace" id="f-repetir">Ver otra vez el desmontaje</button>
         <button type="button" class="enlace" data-tutorial>Repasar el tutorial</button>
       </div>
     </section>
@@ -234,7 +232,7 @@
         <h2 class="titulo" id="d-ayuda-titulo">Cómo se juega</h2>
         <button type="button" class="boton-icono" id="d-cerrar" aria-label="Cerrar"><span aria-hidden="true">×</span></button>
       </div>
-      <p>Cada día hay un reto nuevo. Su pista tiene dos lecturas: la de la superficie, que parece una frase normal, y la oculta, que explica cómo se construye la respuesta.</p>
+      <p>Cada día hay tres retos nuevos, de menos a más difícil. Cada pista tiene dos lecturas: la de la superficie, que parece una frase normal, y la oculta, que explica cómo se construye la respuesta.</p>
       <p>Toda pista tiene una <span class="muestra muestra-def">definición</span>, al principio o al final, y un <span class="muestra muestra-ind">juego de palabras</span>, señalado casi siempre por un <em>indicador</em>. El número entre paréntesis es la longitud de la respuesta.</p>
       <p>No importan las tildes ni las mayúsculas (á = a), pero la <strong>ñ</strong> es una letra distinta de la n.</p>
       <h3 class="sobretitulo">Los trucos</h3>

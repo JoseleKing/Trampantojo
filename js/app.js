@@ -61,7 +61,9 @@ function fechaDe(n) {
   return new Date(t.getUTCFullYear(), t.getUTCMonth(), t.getUTCDate());
 }
 const isoLocal = (f) => `${f.getFullYear()}-${String(f.getMonth() + 1).padStart(2, '0')}-${String(f.getDate()).padStart(2, '0')}`;
-const pistaDe = (n) => datos.dias[(n - 1) % datos.dias.length];
+const pistasDe = (n) => datos.dias[(n - 1) % datos.dias.length].pistas;
+/** Ayudas usadas en los retos ya resueltos del día n, si está a medias. */
+const hechasDe = (n) => (estado.enCurso?.n === n ? estado.enCurso.hechas || [] : []);
 const diaActual = () => prueba || numeroDeHoy();
 
 function rachaHasta(n) {
@@ -114,7 +116,7 @@ function jugar(p, { modo, n = null, indice = 0, repetir = false }) {
   turno++;
   const sol = letras(p.respuesta);
   partida = {
-    p, modo, n, indice, sol,
+    p, modo, n, indice, repetir, sol,
     analisis: analizar(p),
     ayudas: 0,
     celdas: sol.map(() => ({ l: '', fija: false })),
@@ -122,9 +124,9 @@ function jugar(p, { modo, n = null, indice = 0, repetir = false }) {
     llena: false,
   };
 
-  // Recupera una partida a medias del mismo día.
+  // Recupera una partida a medias del mismo reto.
   const enCurso = estado.enCurso;
-  if (modo === 'diaria' && enCurso?.n === n) {
+  if (modo === 'diaria' && !repetir && enCurso?.n === n && hechasDe(n).length === indice) {
     partida.ayudas = enCurso.ayudas || 0;
     for (const i of enCurso.fijas || []) if (sol[i]) partida.celdas[i] = { l: sol[i], fija: true };
     const libres = Array.from(enCurso.letras || '');
@@ -136,7 +138,7 @@ function jugar(p, { modo, n = null, indice = 0, repetir = false }) {
     $('j-etiqueta').textContent = `Tutorial · ${indice + 1} de ${datos.tutorial.length}`;
     dificultad(0);
   } else {
-    $('j-etiqueta').textContent = `Reto n.º ${n}${prueba ? ' · prueba' : ''}`;
+    $('j-etiqueta').textContent = `Reto ${indice + 1} de ${pistasDe(n).length} · n.º ${n}${prueba ? ' · prueba' : ''}`;
     dificultad(p.dificultad);
   }
 
@@ -247,9 +249,10 @@ function volcar(reescribir) {
 }
 
 function guardarEnCurso() {
-  if (partida.modo !== 'diaria' || partida.resuelta) return;
+  if (partida.modo !== 'diaria' || partida.resuelta || partida.repetir) return;
   estado.enCurso = {
     n: partida.n,
+    hechas: hechasDe(partida.n),
     ayudas: partida.ayudas,
     fijas: partida.celdas.map((c, i) => (c.fija ? i : -1)).filter((i) => i >= 0),
     letras: partida.celdas.filter((c) => !c.fija).map((c) => c.l).join(''),
@@ -351,7 +354,7 @@ async function resolver() {
   $('j-mensaje').textContent = '';
   pintarCasillas();
 
-  if (partida.modo === 'diaria') registrar(partida.n, partida.ayudas);
+  if (partida.modo === 'diaria' && !partida.repetir) anotar(partida.n, partida.indice, partida.ayudas);
 
   await espera(900 + partida.sol.length * 70);
   if (yo !== turno) return;
@@ -362,8 +365,19 @@ async function resolver() {
   desmontar();
 }
 
-function registrar(n, ayudas) {
-  estado.historial[n] = { ayudas, fecha: isoLocal(fechaDe(n)) };
+/** Guarda un reto resuelto; con el último del día, el día entero queda registrado. */
+function anotar(n, indice, ayudas) {
+  const hechas = [...hechasDe(n)];
+  hechas[indice] = ayudas;
+  if (hechas.length >= pistasDe(n).length) { registrar(n, hechas); return; }
+  estado.enCurso = { n, hechas, ayudas: 0, fijas: [], letras: '' };
+  guardar();
+}
+
+const suma = (xs) => xs.reduce((t, x) => t + x, 0);
+
+function registrar(n, hechas) {
+  estado.historial[n] = { ayudas: suma(hechas), pistas: hechas, fecha: isoLocal(fechaDe(n)) };
   estado.enCurso = null;
   estado.racha = rachaActual(n);
   estado.mejorRacha = Math.max(estado.mejorRacha || 0, estado.racha);
@@ -372,16 +386,17 @@ function registrar(n, ayudas) {
 }
 
 /**
- * Con el reto de hoy resuelto, la mano ☜ marca Trampantojo como «Hecho» en Almanaque,
- * y su hoja muestra un punto (resuelto), las ayudas usadas y la racha:
- * «Hoy ● sin ayudas · racha 5».
+ * Con los retos de hoy resueltos, la mano ☜ marca Trampantojo como «Hecho» en Almanaque,
+ * y su hoja muestra un punto por reto, las ayudas usadas y la racha:
+ * «Hoy ● ● ● sin ayudas · racha 5».
  */
 function avisarAlmanaque(n) {
   if (prueba || n !== numeroDeHoy()) return;
   const r = estado.historial[n];
+  const total = pistasDe(n).length;
   window.almanaqueHecho?.(r && {
-    aciertos: 1,
-    total: 1,
+    aciertos: total,
+    total,
     texto: r.ayudas ? plural(r.ayudas, 'ayuda', 'ayudas') : 'sin ayudas',
     racha: rachaActual(n),
   });
@@ -455,7 +470,8 @@ async function desmontar() {
   const continuar = $('j-continuar');
   continuar.textContent = partida.modo === 'tutorial'
     ? (partida.indice < datos.tutorial.length - 1 ? 'Siguiente truco' : 'Terminar el tutorial')
-    : 'Ver mi resultado';
+    : partida.repetir ? 'Volver al resultado'
+      : partida.indice < pistasDe(partida.n).length - 1 ? 'Siguiente reto' : 'Ver mi resultado';
   continuar.hidden = false;
   $('j-saltar-tutorial').hidden = partida.modo !== 'tutorial' || partida.indice >= datos.tutorial.length - 1;
   continuar.focus({ preventScroll: true });
@@ -484,43 +500,63 @@ function continuar() {
     }
     return;
   }
-  mostrarFinal(partida.n);
+  if (partida.repetir) mostrarFinal(partida.n);
+  else abrirDia(partida.n);
 }
 
 // ── Resultado del día ──────────────────────────────────────────────
 
-function lineaAyudas(a) {
-  return a === 0 ? '🟢 sin ayudas' : `${'🟡'.repeat(Math.min(a, 10))} ${plural(a, 'ayuda', 'ayudas')}`;
-}
+const marcas = (pistas) => pistas.map((a) => (a ? '🟡' : '🟢')).join('');
+const ayudasTexto = (a) => (a ? plural(a, 'ayuda', 'ayudas') : 'sin ayudas');
 
 function mostrarFinal(n) {
   turno++;
   const r = estado.historial[n];
   if (!r) { abrirHoy(); return; }
   avisarAlmanaque(n);
-  const p = pistaDe(n);
+  const ps = pistasDe(n);
+  // Los días jugados cuando había un solo reto guardan solo el total.
+  const ayudas = r.pistas || ps.map((_, i) => (i ? 0 : r.ayudas));
   const hoy = diaActual();
 
   $('f-numero').textContent = `Trampantojo #${n}`;
   $('f-fecha').textContent = capitalizar(new Intl.DateTimeFormat('es-ES', { weekday: 'long', day: 'numeric', month: 'long' }).format(fechaDe(n)));
 
-  const resp = $('f-respuesta');
-  const sol = letras(p.respuesta);
-  const tam = Math.min(46, Math.floor(((resp.parentElement.clientWidth || 340) - 6 * (sol.length - 1)) / sol.length));
-  resp.style.setProperty('--tam', `${tam}px`);
-  resp.style.setProperty('--gap', '6px');
-  resp.replaceChildren(...sol.map((l, i) => {
-    const s = document.createElement('span');
-    s.className = 'casilla llena acierto';
-    s.style.setProperty('--i', i);
-    s.textContent = l;
-    return s;
+  $('f-retos').replaceChildren(...ps.map((p, i) => {
+    const li = document.createElement('li');
+    li.className = 'final-reto';
+    const resp = document.createElement('div');
+    resp.className = 'casillas casillas-final';
+    resp.setAttribute('role', 'img');
+    resp.setAttribute('aria-label', `Respuesta: ${p.respuesta}`);
+    resp.replaceChildren(...letras(p.respuesta).map((l, k) => {
+      const s = document.createElement('span');
+      s.className = 'casilla llena acierto';
+      s.style.setProperty('--i', k);
+      s.textContent = l;
+      return s;
+    }));
+    const pista = document.createElement('p');
+    pista.className = 'final-pista';
+    pista.textContent = `${p.pista} (${p.longitud})`;
+    const pie = document.createElement('p');
+    pie.className = 'final-reto-pie';
+    const a = ayudas[i] || 0;
+    pie.append(`${a ? '🟡' : '🟢'} ${capitalizar(ayudasTexto(a))} · `);
+    const ver = document.createElement('button');
+    ver.type = 'button';
+    ver.className = 'enlace';
+    ver.textContent = 'Ver el desmontaje';
+    ver.addEventListener('click', () => jugar(p, { modo: 'diaria', n, indice: i, repetir: true }));
+    pie.append(ver);
+    li.append(resp, pista, pie);
+    return li;
   }));
-  resp.setAttribute('aria-label', `Respuesta: ${p.respuesta}`);
-  resp.setAttribute('role', 'img');
 
-  $('f-pista').textContent = `${p.pista} (${p.longitud})`;
-  $('f-ayudas').textContent = r.ayudas === 0 ? '🟢 Resuelto sin ayudas' : `${'🟡'.repeat(Math.min(r.ayudas, 10))} Resuelto con ${plural(r.ayudas, 'ayuda', 'ayudas')}`;
+  const total = suma(ayudas);
+  $('f-ayudas').textContent = total === 0
+    ? `🟢 Los ${ps.length} retos, sin ayudas`
+    : `${marcas(ayudas)} Resueltos con ${plural(total, 'ayuda', 'ayudas')}`;
 
   const racha = rachaActual(hoy);
   $('f-racha').textContent = racha;
@@ -542,11 +578,23 @@ function mostrarFinal(n) {
   }
 
   $('f-aviso').textContent = '';
-  $('f-repetir').onclick = () => jugar(p, { modo: 'diaria', n, repetir: true });
-  $('f-compartir').onclick = () => compartir(n, r.ayudas, racha);
+  $('f-compartir').onclick = () => compartir(n, ayudas, racha);
 
   mostrar('p-final');
+  medirFinal();
   iniciarCuenta(n);
+}
+
+/** Casillas de la pantalla final: todas del mismo tamaño, que quepa la respuesta más larga. */
+function medirFinal() {
+  const filas = $('f-retos').querySelectorAll('.casillas-final');
+  if (!filas.length) return;
+  const mayor = Math.max(...[...filas].map((f) => f.children.length));
+  const tam = Math.min(40, Math.floor((($('f-retos').clientWidth || 340) - 5 * (mayor - 1)) / mayor));
+  for (const f of filas) {
+    f.style.setProperty('--tam', `${tam}px`);
+    f.style.setProperty('--gap', '5px');
+  }
 }
 
 let reloj = null;
@@ -571,7 +619,7 @@ async function compartir(n, ayudas, racha) {
   const url = location.origin + location.pathname;
   const texto = [
     `Trampantojo #${n}`,
-    lineaAyudas(ayudas),
+    `${marcas(ayudas)} ${ayudasTexto(suma(ayudas))}`,
     racha > 1 ? `🔥 ${racha} días seguidos` : null,
     url,
   ].filter(Boolean).join('\n');
@@ -608,11 +656,14 @@ async function copiar(texto) {
 
 // ── Navegación ─────────────────────────────────────────────────────
 
-function abrirHoy() {
-  const n = diaActual();
-  if (estado.historial[n]) mostrarFinal(n);
-  else jugar(pistaDe(n), { modo: 'diaria', n });
+/** Abre el primer reto pendiente del día n, o su resultado si ya están todos. */
+function abrirDia(n) {
+  if (estado.historial[n]) { mostrarFinal(n); return; }
+  const i = Math.min(hechasDe(n).length, pistasDe(n).length - 1);
+  jugar(pistasDe(n)[i], { modo: 'diaria', n, indice: i });
 }
+
+const abrirHoy = () => abrirDia(diaActual());
 
 function empezarTutorial() {
   // La portada solo se ve una vez: empezar el tutorial cuenta, aunque se deje a medias.
@@ -641,7 +692,7 @@ function alternarTema() {
 
 function prepararGlosario() {
   const ejemplos = {};
-  for (const p of [...datos.tutorial, ...datos.dias]) if (!ejemplos[p.tipo]) ejemplos[p.tipo] = p;
+  for (const p of [...datos.tutorial, ...datos.dias.flatMap((d) => d.pistas)]) if (!ejemplos[p.tipo]) ejemplos[p.tipo] = p;
   $('d-glosario').innerHTML = Object.entries(TIPOS).map(([clave, t]) => {
     const ej = ejemplos[clave];
     return `<div><dt>${escapar(t.nombre)}</dt><dd>${escapar(t.linea)}${ej && clave !== 'combinada' && datos.tutorial.includes(ej)
@@ -650,6 +701,21 @@ function prepararGlosario() {
 }
 
 // ── Arranque ───────────────────────────────────────────────────────
+
+/**
+ * Antes había un solo reto al día. Si el de hoy se resolvió así, cuenta como
+ * el primero de los tres y quedan los otros dos por jugar.
+ */
+function migrarDiaUnico() {
+  if (prueba) return;
+  const n = numeroDeHoy();
+  const viejo = estado.historial[n];
+  if (!viejo || viejo.pistas) return;
+  delete estado.historial[n];
+  estado.enCurso = { n, hechas: [viejo.ayudas || 0], ayudas: 0, fijas: [], letras: '' };
+  estado.racha = rachaActual(n);
+  guardar();
+}
 
 function enlazar() {
   entrada.addEventListener('compositionstart', () => { componiendo = true; });
@@ -692,6 +758,7 @@ function enlazar() {
     cancelAnimationFrame(pendiente);
     pendiente = requestAnimationFrame(() => {
       pintarCasillas();
+      if (!$('p-final').hidden) medirFinal();
       if (partida && !$('j-desmontaje').hidden) escenario.medir(partida.analisis.guion.pasos);
     });
   });
@@ -720,8 +787,8 @@ async function iniciar() {
     const r = await fetch(URL_PISTAS, { cache: 'no-cache' });
     if (!r.ok) throw new Error(`HTTP ${r.status}`);
     datos = await r.json();
-    if (!datos?.dias?.length || !datos?.tutorial?.length) throw new Error('JSON sin pistas');
-    for (const p of [...datos.tutorial, ...datos.dias]) p.pista = String(p.pista).normalize('NFC');
+    if (!datos?.dias?.length || !datos.dias.every((d) => d.pistas?.length) || !datos?.tutorial?.length) throw new Error('JSON sin pistas');
+    for (const p of [...datos.tutorial, ...datos.dias.flatMap((d) => d.pistas)]) p.pista = String(p.pista).normalize('NFC');
   } catch (e) {
     console.error('No se pudieron cargar las pistas', e);
     mostrar('p-error');
@@ -730,6 +797,7 @@ async function iniciar() {
   }
 
   prepararGlosario();
+  migrarDiaUnico();
   // Quien ya ha jugado algún día no necesita la portada, aunque no pasara por ella.
   if (!estado.tutorial && (Object.keys(estado.historial).length || estado.enCurso)) {
     estado.tutorial = true;
