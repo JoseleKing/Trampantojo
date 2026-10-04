@@ -254,6 +254,8 @@ function guionTransformar(p, tipo) {
   for (const o of ops) {
     if (o.op === '~') frases.push(`${v(src[o.i])} y ${v(dst[o.j])} suenan igual`);
     if (o.op === '-') frases.push(normalizarLetra(src[o.i]) === 'H' ? `la ${v('H')} es muda` : `la ${v(src[o.i])} no suena`);
+    // Letra que solo tiene la respuesta (ORA → HORA): se escribe, pero no se oye.
+    if (o.op === '+') frases.push(normalizarLetra(dst[o.j]) === 'H' ? `la ${v('H')} es muda` : `la ${v(dst[o.j])} no suena`);
   }
   const explicacion = frases.length ? frases.join('; ') : 'suenan exactamente igual';
   return {
@@ -365,13 +367,16 @@ function guionContenedor(p) {
   const dentroItems = lsDentro.map((l, j) => ({ k: 'd' + j, l }));
   const izq = fueraItems.slice(0, lsPre.length);
   const der = fueraItems.slice(lsPre.length);
+  // "YA (ahora) metido dentro de PASO": la glosa es lo que aparece escrito en la pista.
+  const glosa = (w) => (p.desmontaje.match(new RegExp(`\\b${w}\\s*\\(([^)]*[a-záéíóúüñ][^)]*)\\)`, 'u')) || [])[1];
+  const nombrar = (w) => v(w) + (glosa(w) ? ` (${escapar(glosa(w))})` : '');
 
   return {
-    materia: [dentro, fuera],
+    materia: [dentro, fuera, glosa(dentro), glosa(fuera)].filter(Boolean),
     pasos: [
       {
         frame: [...dentroItems.map((x) => ({ ...x, c: 'materia' })), { k: 'h0', hueco: true }, ...fueraItems.map((x) => ({ ...x, c: 'materia' }))],
-        escalon: 45, pausa: 1000, texto: `Las piezas: ${v(dentro)} y ${v(fuera)}.`,
+        escalon: 45, pausa: 1000, texto: `Las piezas: ${nombrar(dentro)} y ${nombrar(fuera)}.`,
       },
       {
         frame: [
