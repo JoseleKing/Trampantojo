@@ -380,8 +380,8 @@ function registrar(n, hechas) {
 
 /**
  * Con los retos de hoy resueltos, la mano ☜ marca Trampantojo como «Hecho» en Almanaque,
- * y su hoja muestra un punto por reto, las ayudas usadas y la racha:
- * «Hoy ● ● ● sin ayudas · racha 5».
+ * y su hoja muestra un punto por reto y la racha, como los demás juegos:
+ * «Hoy ● ● ● · racha 5».
  */
 function avisarAlmanaque(n) {
   if (prueba || n !== numeroDeHoy()) return;
@@ -390,7 +390,6 @@ function avisarAlmanaque(n) {
   window.almanaqueHecho?.(r && {
     aciertos: total,
     total,
-    texto: r.ayudas ? plural(r.ayudas, 'ayuda', 'ayudas') : 'sin ayudas',
     racha: rachaActual(n),
   });
 }
