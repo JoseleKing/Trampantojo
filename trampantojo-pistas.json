@@ -194,8 +194,8 @@
         },
         {
           "dificultad": 3, "tipo": "inversion",
-          "pista": "Zorra al revés, base de la paella", "longitud": 5,
-          "respuesta": "ARROZ", "definicion": "base de la paella", "indicador": "al revés",
+          "pista": "La zorra vuelve a por la base de la paella", "longitud": 5,
+          "respuesta": "ARROZ", "definicion": "la base de la paella", "indicador": "vuelve",
           "desmontaje": "ZORRA leída hacia atrás → ARROZ"
         }
       ]
@@ -205,8 +205,8 @@
       "pistas": [
         {
           "dificultad": 2, "tipo": "anagrama",
-          "pista": "Patria agitada da un corsario", "longitud": 6,
-          "respuesta": "PIRATA", "definicion": "un corsario", "indicador": "agitada",
+          "pista": "Patria revuelta por un corsario", "longitud": 6,
+          "respuesta": "PIRATA", "definicion": "un corsario", "indicador": "revuelta",
           "desmontaje": "PATRIA desordenada → PIRATA"
         },
         {
@@ -275,8 +275,8 @@
       "pistas": [
         {
           "dificultad": 2, "tipo": "anagrama",
-          "pista": "Décimo roto para el doctor", "longitud": 6,
-          "respuesta": "MÉDICO", "definicion": "el doctor", "indicador": "roto",
+          "pista": "El doctor rompió el décimo", "longitud": 6,
+          "respuesta": "MÉDICO", "definicion": "El doctor", "indicador": "rompió",
           "desmontaje": "DÉCIMO desordenado → MÉDICO"
         },
         {
@@ -356,8 +356,8 @@
         },
         {
           "dificultad": 4, "tipo": "anagrama",
-          "pista": "Monja alborotada acaba siendo ibérico", "longitud": 5,
-          "respuesta": "JAMÓN", "definicion": "ibérico", "indicador": "alborotada",
+          "pista": "Monja alborotada por un ibérico", "longitud": 5,
+          "respuesta": "JAMÓN", "definicion": "un ibérico", "indicador": "alborotada",
           "desmontaje": "MONJA desordenada → JAMÓN"
         }
       ]
