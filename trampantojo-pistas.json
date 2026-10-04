@@ -110,19 +110,19 @@
       "dia": 3,
       "pistas": [
         {
-          "dificultad": 1, "tipo": "suma",
-          "pista": "Pan y parte del pie forman una prenda", "longitud": 8,
-          "respuesta": "PANTALÓN", "definicion": "una prenda", "indicador": "forman",
-          "desmontaje": "PAN + TALÓN"
-        },
-        {
           "dificultad": 2, "tipo": "inversion",
           "pista": "Alas de vuelta en el salón", "longitud": 4,
           "respuesta": "SALA", "definicion": "el salón", "indicador": "de vuelta",
           "desmontaje": "ALAS leído hacia atrás → SALA"
         },
         {
-          "dificultad": 3, "tipo": "homofono",
+          "dificultad": 3, "tipo": "suma",
+          "pista": "Pan y parte del pie forman una prenda", "longitud": 8,
+          "respuesta": "PANTALÓN", "definicion": "una prenda", "indicador": "forman",
+          "desmontaje": "PAN + TALÓN"
+        },
+        {
+          "dificultad": 4, "tipo": "homofono",
           "pista": "Suena a tiro el suceso", "longitud": 5,
           "respuesta": "HECHO", "definicion": "el suceso", "indicador": "Suena a",
           "desmontaje": "ECHO (tiro) suena igual que HECHO",
@@ -134,7 +134,7 @@
       "dia": 4,
       "pistas": [
         {
-          "dificultad": 2, "tipo": "inversion",
+          "dificultad": 1, "tipo": "inversion",
           "pista": "Asir al revés provoca carcajadas", "longitud": 4,
           "respuesta": "RISA", "definicion": "carcajadas", "indicador": "al revés",
           "desmontaje": "ASIR leído hacia atrás → RISA"
@@ -146,7 +146,7 @@
           "desmontaje": "GRITO desordenado → TRIGO"
         },
         {
-          "dificultad": 3, "tipo": "suma",
+          "dificultad": 4, "tipo": "suma",
           "pista": "Brinca cerros este insecto", "longitud": 11,
           "respuesta": "SALTAMONTES", "definicion": "este insecto", "indicador": "(implícito)",
           "desmontaje": "SALTA (brinca) + MONTES (cerros)"
@@ -187,16 +187,16 @@
           "desmontaje": "PERLA − L → PERA"
         },
         {
-          "dificultad": 2, "tipo": "anagrama",
-          "pista": "Alergia mal curada trae felicidad", "longitud": 7,
-          "respuesta": "ALEGRÍA", "definicion": "felicidad", "indicador": "mal curada",
-          "desmontaje": "ALERGIA desordenada → ALEGRÍA"
-        },
-        {
-          "dificultad": 3, "tipo": "inversion",
+          "dificultad": 2, "tipo": "inversion",
           "pista": "La zorra vuelve a por la base de la paella", "longitud": 5,
           "respuesta": "ARROZ", "definicion": "la base de la paella", "indicador": "vuelve",
           "desmontaje": "ZORRA leída hacia atrás → ARROZ"
+        },
+        {
+          "dificultad": 3, "tipo": "anagrama",
+          "pista": "Alergia mal curada trae felicidad", "longitud": 7,
+          "respuesta": "ALEGRÍA", "definicion": "felicidad", "indicador": "mal curada",
+          "desmontaje": "ALERGIA desordenada → ALEGRÍA"
         }
       ]
     },
@@ -204,19 +204,19 @@
       "dia": 7,
       "pistas": [
         {
+          "dificultad": 1, "tipo": "oculta",
+          "pista": "Capital escondida en una sopa risueña", "longitud": 5,
+          "respuesta": "PARÍS", "definicion": "Capital", "indicador": "escondida en",
+          "desmontaje": "so-PA RIS-ueña"
+        },
+        {
           "dificultad": 2, "tipo": "anagrama",
           "pista": "Patria revuelta por un corsario", "longitud": 6,
           "respuesta": "PIRATA", "definicion": "un corsario", "indicador": "revuelta",
           "desmontaje": "PATRIA desordenada → PIRATA"
         },
         {
-          "dificultad": 3, "tipo": "oculta",
-          "pista": "Capital escondida en una sopa risueña", "longitud": 5,
-          "respuesta": "PARÍS", "definicion": "Capital", "indicador": "escondida en",
-          "desmontaje": "so-PA RIS-ueña"
-        },
-        {
-          "dificultad": 4, "tipo": "suma",
+          "dificultad": 3, "tipo": "suma",
           "pista": "Arma de Cupido junto a parte del ojo: sale tras la lluvia", "longitud": 8,
           "respuesta": "ARCOÍRIS", "definicion": "sale tras la lluvia", "indicador": "junto a",
           "desmontaje": "ARCO (arma de Cupido) + IRIS (parte del ojo)"
@@ -227,22 +227,22 @@
       "dia": 8,
       "pistas": [
         {
-          "dificultad": 2, "tipo": "suma",
-          "pista": "Da vueltas con el astro esta flor", "longitud": 7,
-          "respuesta": "GIRASOL", "definicion": "esta flor", "indicador": "con",
-          "desmontaje": "GIRA (da vueltas) + SOL (el astro)"
-        },
-        {
-          "dificultad": 3, "tipo": "resta",
+          "dificultad": 1, "tipo": "resta",
           "pista": "Brazo sin erre es un órgano", "longitud": 4,
           "respuesta": "BAZO", "definicion": "un órgano", "indicador": "sin erre",
           "desmontaje": "BRAZO − R → BAZO"
         },
         {
-          "dificultad": 4, "tipo": "inversion",
+          "dificultad": 2, "tipo": "inversion",
           "pista": "Laicos de vuelta, como ciertas redes", "longitud": 6,
           "respuesta": "SOCIAL", "definicion": "como ciertas redes", "indicador": "de vuelta",
           "desmontaje": "LAICOS leído hacia atrás → SOCIAL"
+        },
+        {
+          "dificultad": 3, "tipo": "suma",
+          "pista": "Da vueltas con el astro esta flor", "longitud": 7,
+          "respuesta": "GIRASOL", "definicion": "esta flor", "indicador": "con",
+          "desmontaje": "GIRA (da vueltas) + SOL (el astro)"
         }
       ]
     },
@@ -250,19 +250,19 @@
       "dia": 9,
       "pistas": [
         {
-          "dificultad": 2, "tipo": "oculta",
+          "dificultad": 1, "tipo": "oculta",
           "pista": "Árbol oculto en el problema", "longitud": 5,
           "respuesta": "ROBLE", "definicion": "Árbol", "indicador": "oculto en",
           "desmontaje": "p-ROBLE-ma"
         },
         {
-          "dificultad": 3, "tipo": "inversion",
+          "dificultad": 2, "tipo": "inversion",
           "pista": "Bestia que sale al darle la vuelta a una lámina", "longitud": 6,
           "respuesta": "ANIMAL", "definicion": "Bestia", "indicador": "darle la vuelta",
           "desmontaje": "LAMINA leída hacia atrás → ANIMAL"
         },
         {
-          "dificultad": 4, "tipo": "homofono",
+          "dificultad": 3, "tipo": "homofono",
           "pista": "Suena a ondulación el arma de David", "longitud": 5,
           "respuesta": "HONDA", "definicion": "el arma de David", "indicador": "Suena a",
           "desmontaje": "ONDA (ondulación) suena igual que HONDA",
@@ -297,22 +297,22 @@
       "dia": 11,
       "pistas": [
         {
-          "dificultad": 2, "tipo": "oculta",
+          "dificultad": 1, "tipo": "oculta",
           "pista": "Agua quieta escondida en el halago", "longitud": 4,
           "respuesta": "LAGO", "definicion": "Agua quieta", "indicador": "escondida en",
           "desmontaje": "ha-LAGO"
+        },
+        {
+          "dificultad": 2, "tipo": "anagrama",
+          "pista": "Camión averiado en una senda", "longitud": 6,
+          "respuesta": "CAMINO", "definicion": "una senda", "indicador": "averiado",
+          "desmontaje": "CAMIÓN desordenado → CAMINO"
         },
         {
           "dificultad": 3, "tipo": "homofono",
           "pista": "Suena a ir a las urnas lo que hace el balón", "longitud": 5,
           "respuesta": "BOTAR", "definicion": "lo que hace el balón", "indicador": "Suena a",
           "desmontaje": "VOTAR (ir a las urnas) suena igual que BOTAR"
-        },
-        {
-          "dificultad": 4, "tipo": "anagrama",
-          "pista": "Camión averiado en una senda", "longitud": 6,
-          "respuesta": "CAMINO", "definicion": "una senda", "indicador": "averiado",
-          "desmontaje": "CAMIÓN desordenado → CAMINO"
         }
       ]
     },
@@ -320,13 +320,13 @@
       "dia": 12,
       "pistas": [
         {
-          "dificultad": 2, "tipo": "resta",
+          "dificultad": 1, "tipo": "resta",
           "pista": "Mango sin ene es un ilusionista", "longitud": 4,
           "respuesta": "MAGO", "definicion": "un ilusionista", "indicador": "sin ene",
           "desmontaje": "MANGO − N → MAGO"
         },
         {
-          "dificultad": 3, "tipo": "anagrama",
+          "dificultad": 2, "tipo": "anagrama",
           "pista": "Las Cortes, reformadas, dan una zona", "longitud": 6,
           "respuesta": "SECTOR", "definicion": "una zona", "indicador": "reformadas",
           "desmontaje": "CORTES desordenadas → SECTOR"
@@ -343,10 +343,10 @@
       "dia": 13,
       "pistas": [
         {
-          "dificultad": 2, "tipo": "homofono",
-          "pista": "Suena a reza lo que marca el reloj", "longitud": 4,
-          "respuesta": "HORA", "definicion": "lo que marca el reloj", "indicador": "Suena a",
-          "desmontaje": "ORA (reza) suena igual que HORA"
+          "dificultad": 2, "tipo": "anagrama",
+          "pista": "Monja alborotada por un ibérico", "longitud": 5,
+          "respuesta": "JAMÓN", "definicion": "un ibérico", "indicador": "alborotada",
+          "desmontaje": "MONJA desordenada → JAMÓN"
         },
         {
           "dificultad": 3, "tipo": "suma",
@@ -355,10 +355,10 @@
           "desmontaje": "CARA (rostro) + COL (verdura)"
         },
         {
-          "dificultad": 4, "tipo": "anagrama",
-          "pista": "Monja alborotada por un ibérico", "longitud": 5,
-          "respuesta": "JAMÓN", "definicion": "un ibérico", "indicador": "alborotada",
-          "desmontaje": "MONJA desordenada → JAMÓN"
+          "dificultad": 4, "tipo": "homofono",
+          "pista": "Suena a reza lo que marca el reloj", "longitud": 4,
+          "respuesta": "HORA", "definicion": "lo que marca el reloj", "indicador": "Suena a",
+          "desmontaje": "ORA (reza) suena igual que HORA"
         }
       ]
     },
