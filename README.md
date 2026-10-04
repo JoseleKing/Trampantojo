@@ -13,6 +13,7 @@ js/app.js                  Flujo del juego, progreso, compartir (FECHA_INICIO es
 js/desmontaje.js           Análisis de cada pista y animación del desmontaje
 js/texto.js                Comparación sin tildes (con ñ) y búsqueda en la pista
 trampantojo-pistas.json    Todo el contenido: tutorial y pistas diarias (tres por día)
+reiniciar/index.html       Página para borrar el progreso guardado
 ```
 
 ## Probarlo en local
@@ -31,6 +32,10 @@ Parámetros útiles para probar:
 | --- | --- |
 | `?dia=7` | Juega los retos del día n.º 7 en modo prueba (no guarda nada) |
 | `?reiniciar` | Borra el progreso guardado y vuelve a la primera visita |
+
+### Reiniciar el juego
+
+Visita `/reiniciar/` (por ejemplo `http://localhost:8000/reiniciar/`) y pulsa «Borrar mi progreso». Borra partidas, racha y el progreso de hoy de ese navegador (la clave `trampantojo:v1` del `localStorage`; el modo claro u oscuro se conserva) y te devuelve al juego, que empieza de nuevo con la portada y el tutorial.
 
 ## Configuración
 

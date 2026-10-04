@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Reiniciar Trampantojo</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#F3EAD8">
+  <link rel="icon" href="../img/logo.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+  <script>
+    // Mismo tema que el juego (esa preferencia no se borra).
+    try {
+      var t = localStorage.getItem('trampantojo:tema');
+      if (t === 'claro') document.documentElement.dataset.theme = 'light';
+      if (t === 'oscuro') document.documentElement.dataset.theme = 'dark';
+    } catch (e) {}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400..500&display=swap">
+  <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body>
+  <header class="cabecera">
+    <a class="marca" href="../" aria-label="Trampantojo, inicio">
+      <img class="marca-icono" src="../img/logo.svg" alt="">
+      <span class="marca-texto">Trampantojo</span>
+    </a>
+  </header>
+
+  <main class="escena">
+    <section class="pantalla" id="pregunta">
+      <div class="portada portada-compacta">
+        <img class="portada-caja" src="../img/logo.svg" alt="">
+        <h1 class="titulo">Deshacer el truco</h1>
+      </div>
+      <div class="tarjeta tarjeta-texto">
+        <p>Se borrarán tus partidas, la racha y el progreso de hoy guardados en este navegador, y la portada con el tutorial volverá a salir al abrir el juego. No se puede deshacer.</p>
+      </div>
+      <div class="acciones acciones-columna">
+        <button type="button" class="boton" id="borrar">Borrar mi progreso</button>
+        <a class="boton boton-secundario" href="../">Volver al juego</a>
+      </div>
+    </section>
+
+    <section class="pantalla" id="hecho" hidden>
+      <div class="portada portada-compacta">
+        <img class="portada-caja" src="../img/logo.svg" alt="">
+        <h1 class="titulo">Hecho</h1>
+      </div>
+      <p role="status" style="text-align:center">Tu progreso se ha borrado. Volviendo al juego…</p>
+    </section>
+  </main>
+
+  <script>
+    // Misma clave que CLAVE en js/app.js.
+    document.getElementById('borrar').addEventListener('click', function () {
+      try { window.localStorage.removeItem('trampantojo:v1'); } catch (e) { /* sin almacenamiento */ }
+      document.getElementById('pregunta').hidden = true;
+      document.getElementById('hecho').hidden = false;
+      setTimeout(function () { location.href = '../'; }, 1500);
+    });
+  </script>
+</body>
+</html>
