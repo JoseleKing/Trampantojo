@@ -628,6 +628,14 @@ a.boton { text-decoration: none; }
   100% { transform: none; }
 }
 
+.casilla.fallo {
+  background: color-mix(in srgb, var(--papel-alto) 80%, var(--alerta));
+  border-color: transparent;
+  border-bottom-color: var(--alerta);
+  color: var(--tinta);
+  animation: voltear .55s cubic-bezier(.3, .7, .3, 1.2) calc(var(--i, 0) * 80ms) both;
+}
+
 .casillas.sacude { animation: sacudida .45s cubic-bezier(.36, .07, .19, .97); }
 @keyframes sacudida {
   15% { transform: translateX(-6px); }
@@ -883,6 +891,7 @@ a.boton { text-decoration: none; }
 }
 .semana .limpia .punto { background: var(--verde); border-color: var(--verde); }
 .semana .con-ayudas .punto { background: var(--ambar); border-color: var(--ambar); }
+.semana .con-fallos .punto { background: var(--alerta); border-color: var(--alerta); }
 .letra-dia { font-size: .72rem; font-weight: 600; color: var(--tinta-3); }
 .semana .hoy .letra-dia { color: var(--acento); }
 
