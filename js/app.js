@@ -371,9 +371,20 @@ function registrar(n, ayudas) {
   avisarAlmanaque(n);
 }
 
-/** Con el reto de hoy resuelto, la mano ☜ marca Trampantojo como «Hecho» en Almanaque. */
+/**
+ * Con el reto de hoy resuelto, la mano ☜ marca Trampantojo como «Hecho» en Almanaque,
+ * y su hoja muestra un punto (resuelto), las ayudas usadas y la racha:
+ * «Hoy ● sin ayudas · racha 5».
+ */
 function avisarAlmanaque(n) {
-  if (!prueba && n === numeroDeHoy()) window.almanaqueHecho?.();
+  if (prueba || n !== numeroDeHoy()) return;
+  const r = estado.historial[n];
+  window.almanaqueHecho?.(r && {
+    aciertos: 1,
+    total: 1,
+    texto: r.ayudas ? plural(r.ayudas, 'ayuda', 'ayudas') : 'sin ayudas',
+    racha: rachaActual(n),
+  });
 }
 
 function rotular(html) {
