@@ -228,9 +228,9 @@
       "pistas": [
         {
           "dificultad": 2, "tipo": "suma",
-          "pista": "Gira con el astro esta flor", "longitud": 7,
+          "pista": "Da vueltas con el astro esta flor", "longitud": 7,
           "respuesta": "GIRASOL", "definicion": "esta flor", "indicador": "con",
-          "desmontaje": "GIRA + SOL (el astro)"
+          "desmontaje": "GIRA (da vueltas) + SOL (el astro)"
         },
         {
           "dificultad": 3, "tipo": "resta",
@@ -263,9 +263,9 @@
         },
         {
           "dificultad": 4, "tipo": "homofono",
-          "pista": "Suena a ola el arma de David", "longitud": 5,
+          "pista": "Suena a ondulación el arma de David", "longitud": 5,
           "respuesta": "HONDA", "definicion": "el arma de David", "indicador": "Suena a",
-          "desmontaje": "ONDA (ola) suena igual que HONDA",
+          "desmontaje": "ONDA (ondulación) suena igual que HONDA",
           "nota": "Con una honda derribó David a Goliat."
         }
       ]
@@ -309,10 +309,10 @@
           "desmontaje": "VOTAR (ir a las urnas) suena igual que BOTAR"
         },
         {
-          "dificultad": 4, "tipo": "contenedor",
-          "pista": "Mi entrada en lo cano abre una senda", "longitud": 6,
-          "respuesta": "CAMINO", "definicion": "una senda", "indicador": "entrada en",
-          "desmontaje": "CA(MI)NO: MI metido dentro de CANO"
+          "dificultad": 4, "tipo": "anagrama",
+          "pista": "Camión averiado en una senda", "longitud": 6,
+          "respuesta": "CAMINO", "definicion": "una senda", "indicador": "averiado",
+          "desmontaje": "CAMIÓN desordenado → CAMINO"
         }
       ]
     },
