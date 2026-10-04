@@ -157,15 +157,8 @@ function jugar(p, { modo, n = null, indice = 0, repetir = false }) {
   lon.textContent = `(${p.longitud || sol.length})`;
   pistaEl.append(' ', lon);
 
-  // Aviso de que esto es el tutorial, con su progreso
+  // En el tutorial, el botón para saltarlo
   $('j-aviso').hidden = modo !== 'tutorial';
-  if (modo === 'tutorial') {
-    $('j-aviso-progreso').replaceChildren(...datos.tutorial.map((_, i) => {
-      const li = document.createElement('li');
-      li.className = i < indice ? 'hecha' : i === indice ? 'actual' : '';
-      return li;
-    }));
-  }
 
   // Nota del tutorial (y, fuera de él, el acceso al tutorial al pie)
   $('j-pie').hidden = modo === 'tutorial';
