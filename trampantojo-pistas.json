@@ -386,6 +386,637 @@
           "nota": "Introduce la convención críptica de que 'círculo' o 'anillo' equivale a la letra O."
         }
       ]
+    },
+    {
+      "dia": 15,
+      "pistas": [
+        {
+          "dificultad": 1, "tipo": "oculta",
+          "pista": "Astro oculto en el piso lujoso", "longitud": 3,
+          "respuesta": "SOL", "definicion": "Astro", "indicador": "oculto en",
+          "desmontaje": "pi-SO L-ujoso"
+        },
+        {
+          "dificultad": 2, "tipo": "anagrama",
+          "pista": "Paso torcido de un anfibio", "longitud": 4,
+          "respuesta": "SAPO", "definicion": "un anfibio", "indicador": "torcido",
+          "desmontaje": "PASO desordenado → SAPO"
+        },
+        {
+          "dificultad": 3, "tipo": "suma",
+          "pista": "Extrae extremos: afila el lápiz", "longitud": 10,
+          "respuesta": "SACAPUNTAS", "definicion": "afila el lápiz", "indicador": "(implícito)",
+          "desmontaje": "SACA (extrae) + PUNTAS (extremos)"
+        }
+      ]
+    },
+    {
+      "dia": 16,
+      "pistas": [
+        {
+          "dificultad": 1, "tipo": "resta",
+          "pista": "Barco sin erre: el dios del vino", "longitud": 4,
+          "respuesta": "BACO", "definicion": "el dios del vino", "indicador": "sin erre",
+          "desmontaje": "BARCO − R → BACO"
+        },
+        {
+          "dificultad": 2, "tipo": "homofono",
+          "pista": "Suena a tosco lo inmenso", "longitud": 5,
+          "respuesta": "VASTO", "definicion": "lo inmenso", "indicador": "Suena a",
+          "desmontaje": "BASTO (tosco) suena igual que VASTO"
+        },
+        {
+          "dificultad": 3, "tipo": "contenedor",
+          "pista": "Pan dentro de esto: un susto", "longitud": 7,
+          "respuesta": "ESPANTO", "definicion": "un susto", "indicador": "dentro de",
+          "desmontaje": "ES(PAN)TO: PAN metido dentro de ESTO"
+        }
+      ]
+    },
+    {
+      "dia": 17,
+      "pistas": [
+        {
+          "dificultad": 1, "tipo": "oculta",
+          "pista": "Agua salada escondida en la cama rota", "longitud": 3,
+          "respuesta": "MAR", "definicion": "Agua salada", "indicador": "escondida en",
+          "desmontaje": "ca-MA R-ota"
+        },
+        {
+          "dificultad": 2, "tipo": "inversion",
+          "pista": "Nada de vuelta: el primer hombre", "longitud": 4,
+          "respuesta": "ADÁN", "definicion": "el primer hombre", "indicador": "de vuelta",
+          "desmontaje": "NADA leído hacia atrás → ADÁN"
+        },
+        {
+          "dificultad": 3, "tipo": "suma",
+          "pista": "Rescata existencias: flotador del socorrista", "longitud": 10,
+          "respuesta": "SALVAVIDAS", "definicion": "flotador del socorrista", "indicador": "(implícito)",
+          "desmontaje": "SALVA (rescata) + VIDAS (existencias)"
+        }
+      ]
+    },
+    {
+      "dia": 18,
+      "pistas": [
+        {
+          "dificultad": 1, "tipo": "resta",
+          "pista": "Mundo sin ene: no habla", "longitud": 4,
+          "respuesta": "MUDO", "definicion": "no habla", "indicador": "sin ene",
+          "desmontaje": "MUNDO − N → MUDO"
+        },
+        {
+          "dificultad": 2, "tipo": "anagrama",
+          "pista": "Traca estallada: se manda por correo", "longitud": 5,
+          "respuesta": "CARTA", "definicion": "se manda por correo", "indicador": "estallada",
+          "desmontaje": "TRACA desordenada → CARTA"
+        },
+        {
+          "dificultad": 3, "tipo": "homofono",
+          "pista": "Suena a cañería, pero poseyó", "longitud": 4,
+          "respuesta": "TUVO", "definicion": "poseyó", "indicador": "Suena a",
+          "desmontaje": "TUBO (cañería) suena igual que TUVO"
+        }
+      ]
+    },
+    {
+      "dia": 19,
+      "pistas": [
+        {
+          "dificultad": 1, "tipo": "oculta",
+          "pista": "Plantígrado escondido en un cuento soso", "longitud": 3,
+          "respuesta": "OSO", "definicion": "Plantígrado", "indicador": "escondido en",
+          "desmontaje": "cuent-O SO-so"
+        },
+        {
+          "dificultad": 2, "tipo": "homofono",
+          "pista": "Suena a metal la equivocación", "longitud": 5,
+          "respuesta": "YERRO", "definicion": "la equivocación", "indicador": "Suena a",
+          "desmontaje": "HIERRO (metal) suena igual que YERRO"
+        },
+        {
+          "dificultad": 4, "tipo": "combinada",
+          "pista": "Sol de vuelta con una vocal: piedra del suelo", "longitud": 4,
+          "respuesta": "LOSA", "definicion": "piedra del suelo", "indicador": "de vuelta / con",
+          "desmontaje": "SOL al revés (LOS) + A (una vocal)",
+          "nota": "«Una vocal» es la A."
+        }
+      ]
+    },
+    {
+      "dia": 20,
+      "pistas": [
+        {
+          "dificultad": 1, "tipo": "inversion",
+          "pista": "Amar al revés: brazo del árbol", "longitud": 4,
+          "respuesta": "RAMA", "definicion": "brazo del árbol", "indicador": "al revés",
+          "desmontaje": "AMAR leído hacia atrás → RAMA"
+        },
+        {
+          "dificultad": 2, "tipo": "inversion",
+          "pista": "Osar al revés: tela brillante", "longitud": 4,
+          "respuesta": "RASO", "definicion": "tela brillante", "indicador": "al revés",
+          "desmontaje": "OSAR leído hacia atrás → RASO"
+        },
+        {
+          "dificultad": 3, "tipo": "suma",
+          "pista": "Satisface los años: se celebra con tarta", "longitud": 10,
+          "respuesta": "CUMPLEAÑOS", "definicion": "se celebra con tarta", "indicador": "(implícito)",
+          "desmontaje": "CUMPLE (satisface) + AÑOS"
+        }
+      ]
+    },
+    {
+      "dia": 21,
+      "pistas": [
+        {
+          "dificultad": 1, "tipo": "oculta",
+          "pista": "Instrumento oculto en el mar pacífico", "longitud": 4,
+          "respuesta": "ARPA", "definicion": "Instrumento", "indicador": "oculto en",
+          "desmontaje": "m-AR PA-cífico"
+        },
+        {
+          "dificultad": 2, "tipo": "anagrama",
+          "pista": "Labor mal hecha da sombra en el parque", "longitud": 5,
+          "respuesta": "ÁRBOL", "definicion": "da sombra en el parque", "indicador": "mal hecha",
+          "desmontaje": "LABOR desordenada → ÁRBOL"
+        },
+        {
+          "dificultad": 3, "tipo": "contenedor",
+          "pista": "Nota metida en casa: prenda con botones", "longitud": 6,
+          "respuesta": "CAMISA", "definicion": "prenda con botones", "indicador": "metida en",
+          "desmontaje": "CA(MI)SA: MI (nota) metido dentro de CASA",
+          "nota": "«Nota» es MI, la nota musical."
+        }
+      ]
+    },
+    {
+      "dia": 22,
+      "pistas": [
+        {
+          "dificultad": 1, "tipo": "resta",
+          "pista": "Salto descabezado: de gran estatura", "longitud": 4,
+          "respuesta": "ALTO", "definicion": "de gran estatura", "indicador": "descabezado",
+          "desmontaje": "SALTO − S → ALTO"
+        },
+        {
+          "dificultad": 2, "tipo": "homofono",
+          "pista": "Suena a árbol la niñera de antes", "longitud": 3,
+          "respuesta": "AYA", "definicion": "la niñera de antes", "indicador": "Suena a",
+          "desmontaje": "HAYA (árbol) suena igual que AYA"
+        },
+        {
+          "dificultad": 3, "tipo": "suma",
+          "pista": "Araña firmamentos el edificio más alto", "longitud": 11,
+          "respuesta": "RASCACIELOS", "definicion": "el edificio más alto", "indicador": "(implícito)",
+          "desmontaje": "RASCA (araña) + CIELOS (firmamentos)"
+        }
+      ]
+    },
+    {
+      "dia": 23,
+      "pistas": [
+        {
+          "dificultad": 1, "tipo": "oculta",
+          "pista": "Transporte escondido en el silvestre nogal", "longitud": 4,
+          "respuesta": "TREN", "definicion": "Transporte", "indicador": "escondido en",
+          "desmontaje": "silves-TRE N-ogal"
+        },
+        {
+          "dificultad": 2, "tipo": "anagrama",
+          "pista": "Pardo alterado: campo de hierba", "longitud": 5,
+          "respuesta": "PRADO", "definicion": "campo de hierba", "indicador": "alterado",
+          "desmontaje": "PARDO desordenado → PRADO"
+        },
+        {
+          "dificultad": 3, "tipo": "suma",
+          "pista": "Daño y marcha: una flor de color morado", "longitud": 5,
+          "respuesta": "MALVA", "definicion": "una flor de color morado", "indicador": "y",
+          "desmontaje": "MAL (daño) + VA (marcha)"
+        }
+      ]
+    },
+    {
+      "dia": 24,
+      "pistas": [
+        {
+          "dificultad": 1, "tipo": "resta",
+          "pista": "Globo descabezado aúlla a la luna", "longitud": 4,
+          "respuesta": "LOBO", "definicion": "aúlla a la luna", "indicador": "descabezado",
+          "desmontaje": "GLOBO − G → LOBO"
+        },
+        {
+          "dificultad": 2, "tipo": "inversion",
+          "pista": "Lava que vuelve como garantía", "longitud": 4,
+          "respuesta": "AVAL", "definicion": "garantía", "indicador": "vuelve",
+          "desmontaje": "LAVA leída hacia atrás → AVAL"
+        },
+        {
+          "dificultad": 3, "tipo": "contenedor",
+          "pista": "La nota dentro del desafío: un cuento", "longitud": 6,
+          "respuesta": "RELATO", "definicion": "un cuento", "indicador": "dentro del",
+          "desmontaje": "RE(LA)TO: LA (nota) metido dentro de RETO (desafío)",
+          "nota": "«La nota» es LA, la nota musical."
+        }
+      ]
+    },
+    {
+      "dia": 25,
+      "pistas": [
+        {
+          "dificultad": 1, "tipo": "oculta",
+          "pista": "Satélite escondido en el baúl, una joya", "longitud": 4,
+          "respuesta": "LUNA", "definicion": "Satélite", "indicador": "escondido en",
+          "desmontaje": "ba-ÚL UNA"
+        },
+        {
+          "dificultad": 2, "tipo": "homofono",
+          "pista": "Suena a preposición el cuerno del toro", "longitud": 4,
+          "respuesta": "ASTA", "definicion": "el cuerno del toro", "indicador": "Suena a",
+          "desmontaje": "HASTA (preposición) suena igual que ASTA"
+        },
+        {
+          "dificultad": 4, "tipo": "combinada",
+          "pista": "Alas de vuelta con una nota: como el mar", "longitud": 6,
+          "respuesta": "SALADO", "definicion": "como el mar", "indicador": "de vuelta / con",
+          "desmontaje": "ALAS al revés (SALA) + DO (una nota)",
+          "nota": "«Una nota» es DO."
+        }
+      ]
+    },
+    {
+      "dia": 26,
+      "pistas": [
+        {
+          "dificultad": 1, "tipo": "inversion",
+          "pista": "Atar de vuelta a un roedor de alcantarilla", "longitud": 4,
+          "respuesta": "RATA", "definicion": "roedor de alcantarilla", "indicador": "de vuelta",
+          "desmontaje": "ATAR leído hacia atrás → RATA"
+        },
+        {
+          "dificultad": 2, "tipo": "anagrama",
+          "pista": "Presto, revuelto, cierra la comida", "longitud": 6,
+          "respuesta": "POSTRE", "definicion": "cierra la comida", "indicador": "revuelto",
+          "desmontaje": "PRESTO desordenado → POSTRE"
+        },
+        {
+          "dificultad": 3, "tipo": "suma",
+          "pista": "Transcurre la hora en este entretenimiento", "longitud": 10,
+          "respuesta": "PASATIEMPO", "definicion": "este entretenimiento", "indicador": "(implícito)",
+          "desmontaje": "PASA (transcurre) + TIEMPO (la hora)"
+        }
+      ]
+    },
+    {
+      "dia": 27,
+      "pistas": [
+        {
+          "dificultad": 1, "tipo": "resta",
+          "pista": "Claro sin ele: cuesta mucho", "longitud": 4,
+          "respuesta": "CARO", "definicion": "cuesta mucho", "indicador": "sin ele",
+          "desmontaje": "CLARO − L → CARO"
+        },
+        {
+          "dificultad": 2, "tipo": "inversion",
+          "pista": "Ave que regresa: la primera mujer", "longitud": 3,
+          "respuesta": "EVA", "definicion": "la primera mujer", "indicador": "que regresa",
+          "desmontaje": "AVE leída hacia atrás → EVA"
+        },
+        {
+          "dificultad": 3, "tipo": "contenedor",
+          "pista": "Sopa que guarda un la: parte de la americana", "longitud": 6,
+          "respuesta": "SOLAPA", "definicion": "parte de la americana", "indicador": "que guarda",
+          "desmontaje": "SO(LA)PA: LA (nota) metido dentro de SOPA",
+          "nota": "«Un la» es la nota musical LA."
+        }
+      ]
+    },
+    {
+      "dia": 28,
+      "pistas": [
+        {
+          "dificultad": 1, "tipo": "oculta",
+          "pista": "Trofeo escondido en el tabaco paraguayo", "longitud": 4,
+          "respuesta": "COPA", "definicion": "Trofeo", "indicador": "escondido en",
+          "desmontaje": "taba-CO PA-raguayo"
+        },
+        {
+          "dificultad": 2, "tipo": "anagrama",
+          "pista": "Costra destrozada: roedor que construye presas", "longitud": 6,
+          "respuesta": "CASTOR", "definicion": "roedor que construye presas", "indicador": "destrozada",
+          "desmontaje": "COSTRA desordenada → CASTOR"
+        },
+        {
+          "dificultad": 3, "tipo": "suma",
+          "pista": "Líquido en celebraciones: el que las estropea", "longitud": 11,
+          "respuesta": "AGUAFIESTAS", "definicion": "el que las estropea", "indicador": "(implícito)",
+          "desmontaje": "AGUA (líquido) + FIESTAS (celebraciones)"
+        }
+      ]
+    },
+    {
+      "dia": 29,
+      "pistas": [
+        {
+          "dificultad": 1, "tipo": "resta",
+          "pista": "Frío sin efe va a dar en la mar", "longitud": 3,
+          "respuesta": "RÍO", "definicion": "va a dar en la mar", "indicador": "sin efe",
+          "desmontaje": "FRÍO − F → RÍO"
+        },
+        {
+          "dificultad": 2, "tipo": "homofono",
+          "pista": "Suena a patíbulo el cetáceo", "longitud": 4,
+          "respuesta": "ORCA", "definicion": "el cetáceo", "indicador": "Suena a",
+          "desmontaje": "HORCA (patíbulo) suena igual que ORCA"
+        },
+        {
+          "dificultad": 3, "tipo": "homofono",
+          "pista": "Suena a se desplomó quien guardó silencio", "longitud": 5,
+          "respuesta": "CALLÓ", "definicion": "guardó silencio", "indicador": "Suena a",
+          "desmontaje": "CAYÓ (se desplomó) suena igual que CALLÓ",
+          "nota": "Con el yeísmo, la LL y la Y suenan igual, como en la mayor parte del mundo hispanohablante."
+        }
+      ]
+    },
+    {
+      "dia": 30,
+      "pistas": [
+        {
+          "dificultad": 1, "tipo": "oculta",
+          "pista": "Crema escondida en la sonata", "longitud": 4,
+          "respuesta": "NATA", "definicion": "Crema", "indicador": "escondida en",
+          "desmontaje": "so-NATA"
+        },
+        {
+          "dificultad": 2, "tipo": "anagrama",
+          "pista": "Mira revuelta: la busca el poeta", "longitud": 4,
+          "respuesta": "RIMA", "definicion": "la busca el poeta", "indicador": "revuelta",
+          "desmontaje": "MIRA desordenada → RIMA"
+        },
+        {
+          "dificultad": 3, "tipo": "suma",
+          "pista": "Flor y corriente: se reza con cuentas", "longitud": 7,
+          "respuesta": "ROSARIO", "definicion": "se reza con cuentas", "indicador": "y",
+          "desmontaje": "ROSA (flor) + RÍO (corriente)"
+        }
+      ]
+    },
+    {
+      "dia": 31,
+      "pistas": [
+        {
+          "dificultad": 1, "tipo": "resta",
+          "pista": "Pluma sin ele: felino americano", "longitud": 4,
+          "respuesta": "PUMA", "definicion": "felino americano", "indicador": "sin ele",
+          "desmontaje": "PLUMA − L → PUMA"
+        },
+        {
+          "dificultad": 2, "tipo": "inversion",
+          "pista": "Odiar, del revés, para un abrigo gastado", "longitud": 5,
+          "respuesta": "RAÍDO", "definicion": "gastado", "indicador": "del revés",
+          "desmontaje": "ODIAR leído hacia atrás → RAÍDO"
+        },
+        {
+          "dificultad": 3, "tipo": "contenedor",
+          "pista": "Le metido en la mata: va en la bodega del avión", "longitud": 6,
+          "respuesta": "MALETA", "definicion": "va en la bodega del avión", "indicador": "metido en",
+          "desmontaje": "MA(LE)TA: LE metido dentro de MATA",
+          "nota": "«Le» es LE; la mata es un arbusto."
+        }
+      ]
+    },
+    {
+      "dia": 32,
+      "pistas": [
+        {
+          "dificultad": 1, "tipo": "oculta",
+          "pista": "Anfibio escondido en la granada", "longitud": 4,
+          "respuesta": "RANA", "definicion": "Anfibio", "indicador": "escondido en",
+          "desmontaje": "g-RANA-da"
+        },
+        {
+          "dificultad": 2, "tipo": "homofono",
+          "pista": "Suena a sorpresa la cerca", "longitud": 5,
+          "respuesta": "VALLA", "definicion": "la cerca", "indicador": "Suena a",
+          "desmontaje": "VAYA (¡sorpresa!) suena igual que VALLA",
+          "nota": "Con el yeísmo, la LL y la Y suenan igual."
+        },
+        {
+          "dificultad": 3, "tipo": "suma",
+          "pista": "Perro con pieza del parchís: cierra la puerta", "longitud": 7,
+          "respuesta": "CANDADO", "definicion": "cierra la puerta", "indicador": "con",
+          "desmontaje": "CAN (perro) + DADO (pieza del parchís)"
+        }
+      ]
+    },
+    {
+      "dia": 33,
+      "pistas": [
+        {
+          "dificultad": 1, "tipo": "inversion",
+          "pista": "Res de vuelta: existir", "longitud": 3,
+          "respuesta": "SER", "definicion": "existir", "indicador": "de vuelta",
+          "desmontaje": "RES leído hacia atrás → SER"
+        },
+        {
+          "dificultad": 2, "tipo": "anagrama",
+          "pista": "Tenor desorientado: lo señala la brújula", "longitud": 5,
+          "respuesta": "NORTE", "definicion": "lo señala la brújula", "indicador": "desorientado",
+          "desmontaje": "TENOR desordenado → NORTE"
+        },
+        {
+          "dificultad": 4, "tipo": "combinada",
+          "pista": "Nos, de vuelta, con carcajada: gesto alegre", "longitud": 7,
+          "respuesta": "SONRISA", "definicion": "gesto alegre", "indicador": "de vuelta / con",
+          "desmontaje": "NOS al revés (SON) + RISA (carcajada)"
+        }
+      ]
+    },
+    {
+      "dia": 34,
+      "pistas": [
+        {
+          "dificultad": 1, "tipo": "oculta",
+          "pista": "Piedra escondida en el jarro caliente", "longitud": 4,
+          "respuesta": "ROCA", "definicion": "Piedra", "indicador": "escondida en",
+          "desmontaje": "jar-RO CA-liente"
+        },
+        {
+          "dificultad": 2, "tipo": "inversion",
+          "pista": "Arar al revés resulta extraña", "longitud": 4,
+          "respuesta": "RARA", "definicion": "extraña", "indicador": "al revés",
+          "desmontaje": "ARAR leído hacia atrás → RARA"
+        },
+        {
+          "dificultad": 3, "tipo": "contenedor",
+          "pista": "Lo metido en el silbato: conduce el avión", "longitud": 6,
+          "respuesta": "PILOTO", "definicion": "conduce el avión", "indicador": "metido en",
+          "desmontaje": "PI(LO)TO: LO metido dentro de PITO (silbato)"
+        }
+      ]
+    },
+    {
+      "dia": 35,
+      "pistas": [
+        {
+          "dificultad": 1, "tipo": "resta",
+          "pista": "Clima que ha perdido la ele: lo más alto del monte", "longitud": 4,
+          "respuesta": "CIMA", "definicion": "lo más alto del monte", "indicador": "ha perdido la ele",
+          "desmontaje": "CLIMA − L → CIMA"
+        },
+        {
+          "dificultad": 2, "tipo": "anagrama",
+          "pista": "Astro estrellado: un molusco con perla", "longitud": 5,
+          "respuesta": "OSTRA", "definicion": "un molusco con perla", "indicador": "estrellado",
+          "desmontaje": "ASTRO desordenado → OSTRA"
+        },
+        {
+          "dificultad": 3, "tipo": "suma",
+          "pista": "Orilla y negativa: la estación del calor", "longitud": 6,
+          "respuesta": "VERANO", "definicion": "la estación del calor", "indicador": "y",
+          "desmontaje": "VERA (orilla) + NO (negativa)"
+        }
+      ]
+    },
+    {
+      "dia": 36,
+      "pistas": [
+        {
+          "dificultad": 1, "tipo": "oculta",
+          "pista": "Simio oculto en lo monótono", "longitud": 4,
+          "respuesta": "MONO", "definicion": "Simio", "indicador": "oculto en",
+          "desmontaje": "MONO-tono"
+        },
+        {
+          "dificultad": 2, "tipo": "homofono",
+          "pista": "Suena a docta la sangre de las plantas", "longitud": 5,
+          "respuesta": "SAVIA", "definicion": "la sangre de las plantas", "indicador": "Suena a",
+          "desmontaje": "SABIA (docta) suena igual que SAVIA"
+        },
+        {
+          "dificultad": 3, "tipo": "suma",
+          "pista": "Lecho con licor: un crustáceo", "longitud": 7,
+          "respuesta": "CAMARÓN", "definicion": "un crustáceo", "indicador": "con",
+          "desmontaje": "CAMA (lecho) + RON (licor)"
+        }
+      ]
+    },
+    {
+      "dia": 37,
+      "pistas": [
+        {
+          "dificultad": 1, "tipo": "resta",
+          "pista": "Flecha sin ele marca el calendario", "longitud": 5,
+          "respuesta": "FECHA", "definicion": "marca el calendario", "indicador": "sin ele",
+          "desmontaje": "FLECHA − L → FECHA"
+        },
+        {
+          "dificultad": 2, "tipo": "anagrama",
+          "pista": "Credo mal rezado por un animal de granja", "longitud": 5,
+          "respuesta": "CERDO", "definicion": "un animal de granja", "indicador": "mal rezado",
+          "desmontaje": "CREDO desordenado → CERDO"
+        },
+        {
+          "dificultad": 3, "tipo": "contenedor",
+          "pista": "Un «so» dentro de la cana: casa grande", "longitud": 6,
+          "respuesta": "CASONA", "definicion": "casa grande", "indicador": "dentro de",
+          "desmontaje": "CA(SO)NA: SO metido dentro de CANA",
+          "nota": "«So» es la voz con que se manda parar a las caballerías."
+        }
+      ]
+    },
+    {
+      "dia": 38,
+      "pistas": [
+        {
+          "dificultad": 1, "tipo": "oculta",
+          "pista": "Material de velas escondido en la acera", "longitud": 4,
+          "respuesta": "CERA", "definicion": "Material de velas", "indicador": "escondido en",
+          "desmontaje": "a-CERA"
+        },
+        {
+          "dificultad": 2, "tipo": "inversion",
+          "pista": "Amad de vuelta a la reina del tablero", "longitud": 4,
+          "respuesta": "DAMA", "definicion": "reina del tablero", "indicador": "de vuelta",
+          "desmontaje": "AMAD leído hacia atrás → DAMA"
+        },
+        {
+          "dificultad": 3, "tipo": "suma",
+          "pista": "Ensenada y océano: un molusco con tinta", "longitud": 7,
+          "respuesta": "CALAMAR", "definicion": "un molusco con tinta", "indicador": "y",
+          "desmontaje": "CALA (ensenada) + MAR (océano)"
+        }
+      ]
+    },
+    {
+      "dia": 39,
+      "pistas": [
+        {
+          "dificultad": 1, "tipo": "resta",
+          "pista": "Trono sin erre: lo da el diapasón", "longitud": 4,
+          "respuesta": "TONO", "definicion": "lo da el diapasón", "indicador": "sin erre",
+          "desmontaje": "TRONO − R → TONO"
+        },
+        {
+          "dificultad": 2, "tipo": "anagrama",
+          "pista": "Coral derretido: lo trae el verano", "longitud": 5,
+          "respuesta": "CALOR", "definicion": "lo trae el verano", "indicador": "derretido",
+          "desmontaje": "CORAL desordenado → CALOR"
+        },
+        {
+          "dificultad": 4, "tipo": "combinada",
+          "pista": "Roma de vuelta y un plantígrado: cariñoso", "longitud": 7,
+          "respuesta": "AMOROSO", "definicion": "cariñoso", "indicador": "de vuelta / y",
+          "desmontaje": "ROMA al revés (AMOR) + OSO (un plantígrado)"
+        }
+      ]
+    },
+    {
+      "dia": 40,
+      "pistas": [
+        {
+          "dificultad": 1, "tipo": "oculta",
+          "pista": "Fiera oculta en el camaleón", "longitud": 4,
+          "respuesta": "LEÓN", "definicion": "Fiera", "indicador": "oculta en",
+          "desmontaje": "cama-LEÓN"
+        },
+        {
+          "dificultad": 2, "tipo": "homofono",
+          "pista": "Suena a fabricó lo que hace el marinero con la bandera", "longitud": 3,
+          "respuesta": "IZO", "definicion": "lo que hace el marinero con la bandera", "indicador": "Suena a",
+          "desmontaje": "HIZO (fabricó) suena igual que IZO"
+        },
+        {
+          "dificultad": 3, "tipo": "contenedor",
+          "pista": "Me meto en la cota: astro con cola", "longitud": 6,
+          "respuesta": "COMETA", "definicion": "astro con cola", "indicador": "meto en",
+          "desmontaje": "CO(ME)TA: ME metido dentro de COTA",
+          "nota": "«Me» es ME; la cota es la altura de un punto sobre el nivel del mar."
+        }
+      ]
+    },
+    {
+      "dia": 41,
+      "pistas": [
+        {
+          "dificultad": 1, "tipo": "resta",
+          "pista": "Signo sin ge: el destino", "longitud": 4,
+          "respuesta": "SINO", "definicion": "el destino", "indicador": "sin ge",
+          "desmontaje": "SIGNO − G → SINO"
+        },
+        {
+          "dificultad": 2, "tipo": "anagrama",
+          "pista": "Padre reformado separa dos cuartos", "longitud": 5,
+          "respuesta": "PARED", "definicion": "separa dos cuartos", "indicador": "reformado",
+          "desmontaje": "PADRE desordenado → PARED"
+        },
+        {
+          "dificultad": 3, "tipo": "suma",
+          "pista": "Coge una infusión: va en la ensalada", "longitud": 6,
+          "respuesta": "TOMATE", "definicion": "va en la ensalada", "indicador": "(implícito)",
+          "desmontaje": "TOMA (coge) + TE (una infusión)"
+        }
+      ]
     }
   ]
 }
