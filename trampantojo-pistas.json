@@ -1017,6 +1017,1061 @@
           "desmontaje": "TOMA (coge) + TE (una infusión)"
         }
       ]
+    },
+    {
+      "dia": 42,
+      "pistas": [
+        {
+          "dificultad": 1,
+          "tipo": "resta",
+          "pista": "Bala descabezada: sirve para volar",
+          "longitud": 3,
+          "respuesta": "ALA",
+          "definicion": "sirve para volar",
+          "indicador": "descabezada",
+          "desmontaje": "BALA − B → ALA"
+        },
+        {
+          "dificultad": 2,
+          "tipo": "anagrama",
+          "pista": "Trago revuelto resulta agradable",
+          "longitud": 5,
+          "respuesta": "GRATO",
+          "definicion": "agradable",
+          "indicador": "revuelto",
+          "desmontaje": "TRAGO desordenado → GRATO"
+        },
+        {
+          "dificultad": 3,
+          "tipo": "suma",
+          "pista": "Perro con bañera: bar del cuartel",
+          "longitud": 7,
+          "respuesta": "CANTINA",
+          "definicion": "bar del cuartel",
+          "indicador": "con",
+          "desmontaje": "CAN (perro) + TINA (bañera)"
+        }
+      ]
+    },
+    {
+      "dia": 43,
+      "pistas": [
+        {
+          "dificultad": 1,
+          "tipo": "resta",
+          "pista": "Pausa sin u: uva seca",
+          "longitud": 4,
+          "respuesta": "PASA",
+          "definicion": "uva seca",
+          "indicador": "sin u",
+          "desmontaje": "PAUSA − U → PASA"
+        },
+        {
+          "dificultad": 2,
+          "tipo": "homofono",
+          "pista": "Suena a carrete lo de la vaca",
+          "longitud": 6,
+          "respuesta": "BOVINA",
+          "definicion": "lo de la vaca",
+          "indicador": "Suena a",
+          "desmontaje": "BOBINA (carrete) suena igual que BOVINA"
+        },
+        {
+          "dificultad": 3,
+          "tipo": "suma",
+          "pista": "Infusión con nota: tejido",
+          "longitud": 4,
+          "respuesta": "TELA",
+          "definicion": "tejido",
+          "indicador": "con",
+          "desmontaje": "TÉ (infusión) + LA (nota)"
+        }
+      ]
+    },
+    {
+      "dia": 44,
+      "pistas": [
+        {
+          "dificultad": 1,
+          "tipo": "resta",
+          "pista": "Cabra sin be: el rostro",
+          "longitud": 4,
+          "respuesta": "CARA",
+          "definicion": "el rostro",
+          "indicador": "sin be",
+          "desmontaje": "CABRA − B → CARA"
+        },
+        {
+          "dificultad": 2,
+          "tipo": "anagrama",
+          "pista": "Salta, alterado, sostiene el cielo",
+          "longitud": 5,
+          "respuesta": "ATLAS",
+          "definicion": "sostiene el cielo",
+          "indicador": "alterado",
+          "desmontaje": "SALTA desordenado → ATLAS",
+          "nota": "Atlas es el titán que, según el mito griego, sostiene la bóveda del cielo."
+        },
+        {
+          "dificultad": 3,
+          "tipo": "contenedor",
+          "pista": "Re metido en la cata: máscara",
+          "longitud": 6,
+          "respuesta": "CARETA",
+          "definicion": "máscara",
+          "indicador": "metido en",
+          "desmontaje": "CA(RE)TA: RE (nota) metido dentro de CATA",
+          "nota": "La cata es la prueba de un vino o un alimento."
+        }
+      ]
+    },
+    {
+      "dia": 45,
+      "pistas": [
+        {
+          "dificultad": 1,
+          "tipo": "inversion",
+          "pista": "Raza al revés: la suerte",
+          "longitud": 4,
+          "respuesta": "AZAR",
+          "definicion": "la suerte",
+          "indicador": "al revés",
+          "desmontaje": "RAZA leída hacia atrás → AZAR"
+        },
+        {
+          "dificultad": 2,
+          "tipo": "anagrama",
+          "pista": "Pelar mal hecho: joya del mar",
+          "longitud": 5,
+          "respuesta": "PERLA",
+          "definicion": "joya del mar",
+          "indicador": "mal hecho",
+          "desmontaje": "PELAR desordenado → PERLA"
+        },
+        {
+          "dificultad": 3,
+          "tipo": "contenedor",
+          "pista": "De metido en la cana: hilera de eslabones",
+          "longitud": 6,
+          "respuesta": "CADENA",
+          "definicion": "hilera de eslabones",
+          "indicador": "metido en",
+          "desmontaje": "CA(DE)NA: DE metido dentro de CANA",
+          "nota": "La cana es el pelo blanco."
+        }
+      ]
+    },
+    {
+      "dia": 46,
+      "pistas": [
+        {
+          "dificultad": 1,
+          "tipo": "inversion",
+          "pista": "Ratón de vuelta: darse cuenta",
+          "longitud": 5,
+          "respuesta": "NOTAR",
+          "definicion": "darse cuenta",
+          "indicador": "de vuelta",
+          "desmontaje": "RATÓN leído hacia atrás → NOTAR"
+        },
+        {
+          "dificultad": 2,
+          "tipo": "homofono",
+          "pista": "Suena a elige en las urnas el calzado de montaña",
+          "longitud": 4,
+          "respuesta": "BOTA",
+          "definicion": "el calzado de montaña",
+          "indicador": "Suena a",
+          "desmontaje": "VOTA (elige en las urnas) suena igual que BOTA"
+        },
+        {
+          "dificultad": 3,
+          "tipo": "suma",
+          "pista": "Pareja y lluvias: te protege del chaparrón",
+          "longitud": 8,
+          "respuesta": "PARAGUAS",
+          "definicion": "te protege del chaparrón",
+          "indicador": "y",
+          "desmontaje": "PAR (pareja) + AGUAS (lluvias)"
+        }
+      ]
+    },
+    {
+      "dia": 47,
+      "pistas": [
+        {
+          "dificultad": 1,
+          "tipo": "oculta",
+          "pista": "Extremidad oculta en el pijama novedoso",
+          "longitud": 4,
+          "respuesta": "MANO",
+          "definicion": "Extremidad",
+          "indicador": "oculta en",
+          "desmontaje": "pija-MA NO-vedoso"
+        },
+        {
+          "dificultad": 2,
+          "tipo": "homofono",
+          "pista": "Suena a cazuela la hondonada",
+          "longitud": 4,
+          "respuesta": "HOYA",
+          "definicion": "la hondonada",
+          "indicador": "Suena a",
+          "desmontaje": "OLLA (cazuela) suena igual que HOYA"
+        },
+        {
+          "dificultad": 3,
+          "tipo": "suma",
+          "pista": "Prado y beato: cementerio",
+          "longitud": 10,
+          "respuesta": "CAMPOSANTO",
+          "definicion": "cementerio",
+          "indicador": "y",
+          "desmontaje": "CAMPO (prado) + SANTO (beato)"
+        }
+      ]
+    },
+    {
+      "dia": 48,
+      "pistas": [
+        {
+          "dificultad": 1,
+          "tipo": "oculta",
+          "pista": "Condimento oculto en el tajo",
+          "longitud": 3,
+          "respuesta": "AJO",
+          "definicion": "Condimento",
+          "indicador": "oculto en",
+          "desmontaje": "t-AJO"
+        },
+        {
+          "dificultad": 2,
+          "tipo": "homofono",
+          "pista": "Suena a pasar páginas echar un vistazo",
+          "longitud": 5,
+          "respuesta": "OJEAR",
+          "definicion": "echar un vistazo",
+          "indicador": "Suena a",
+          "desmontaje": "HOJEAR (pasar páginas) suena igual que OJEAR"
+        },
+        {
+          "dificultad": 3,
+          "tipo": "suma",
+          "pista": "Inaugura conservas: utensilio de cocina",
+          "longitud": 9,
+          "respuesta": "ABRELATAS",
+          "definicion": "utensilio de cocina",
+          "indicador": "(implícito)",
+          "desmontaje": "ABRE (inaugura) + LATAS (conservas)"
+        }
+      ]
+    },
+    {
+      "dia": 49,
+      "pistas": [
+        {
+          "dificultad": 1,
+          "tipo": "resta",
+          "pista": "Mismo sin ese: actor que no habla",
+          "longitud": 4,
+          "respuesta": "MIMO",
+          "definicion": "actor que no habla",
+          "indicador": "sin ese",
+          "desmontaje": "MISMO − S → MIMO"
+        },
+        {
+          "dificultad": 2,
+          "tipo": "anagrama",
+          "pista": "Carne revuelta: venir al mundo",
+          "longitud": 5,
+          "respuesta": "NACER",
+          "definicion": "venir al mundo",
+          "indicador": "revuelta",
+          "desmontaje": "CARNE desordenada → NACER"
+        },
+        {
+          "dificultad": 3,
+          "tipo": "suma",
+          "pista": "Labios y nota: un mordisco",
+          "longitud": 6,
+          "respuesta": "BOCADO",
+          "definicion": "un mordisco",
+          "indicador": "y",
+          "desmontaje": "BOCA (labios) + DO (nota)"
+        }
+      ]
+    },
+    {
+      "dia": 50,
+      "pistas": [
+        {
+          "dificultad": 1,
+          "tipo": "resta",
+          "pista": "Cielo sin i: cinta adhesiva",
+          "longitud": 4,
+          "respuesta": "CELO",
+          "definicion": "cinta adhesiva",
+          "indicador": "sin i",
+          "desmontaje": "CIELO − I → CELO"
+        },
+        {
+          "dificultad": 2,
+          "tipo": "homofono",
+          "pista": "Suena a excavo el grado militar",
+          "longitud": 4,
+          "respuesta": "CABO",
+          "definicion": "el grado militar",
+          "indicador": "Suena a",
+          "desmontaje": "CAVO (excavo) suena igual que CABO"
+        },
+        {
+          "dificultad": 4,
+          "tipo": "combinada",
+          "pista": "Atar de vuelta con un plan: suena el tambor",
+          "longitud": 8,
+          "respuesta": "RATAPLÁN",
+          "definicion": "suena el tambor",
+          "indicador": "de vuelta / con",
+          "desmontaje": "ATAR al revés (RATA) + PLAN (un plan)"
+        }
+      ]
+    },
+    {
+      "dia": 51,
+      "pistas": [
+        {
+          "dificultad": 1,
+          "tipo": "resta",
+          "pista": "Causa sin u: el hogar",
+          "longitud": 4,
+          "respuesta": "CASA",
+          "definicion": "el hogar",
+          "indicador": "sin u",
+          "desmontaje": "CAUSA − U → CASA"
+        },
+        {
+          "dificultad": 2,
+          "tipo": "homofono",
+          "pista": "Suena a silencioso el bastón del pastor",
+          "longitud": 6,
+          "respuesta": "CAYADO",
+          "definicion": "el bastón del pastor",
+          "indicador": "Suena a",
+          "desmontaje": "CALLADO (silencioso) suena igual que CAYADO"
+        },
+        {
+          "dificultad": 4,
+          "tipo": "combinada",
+          "pista": "Lata de vuelta con la niñera: torre de vigía",
+          "longitud": 7,
+          "respuesta": "ATALAYA",
+          "definicion": "torre de vigía",
+          "indicador": "de vuelta / con",
+          "desmontaje": "LATA al revés (ATAL) + AYA (la niñera)"
+        }
+      ]
+    },
+    {
+      "dia": 52,
+      "pistas": [
+        {
+          "dificultad": 1,
+          "tipo": "oculta",
+          "pista": "Grano oculto en la rama izquierda",
+          "longitud": 4,
+          "respuesta": "MAÍZ",
+          "definicion": "Grano",
+          "indicador": "oculto en",
+          "desmontaje": "ra-MA IZ-quierda"
+        },
+        {
+          "dificultad": 2,
+          "tipo": "anagrama",
+          "pista": "Venas reventadas: barcos",
+          "longitud": 5,
+          "respuesta": "NAVES",
+          "definicion": "barcos",
+          "indicador": "reventadas",
+          "desmontaje": "VENAS desordenadas → NAVES"
+        },
+        {
+          "dificultad": 4,
+          "tipo": "contenedor",
+          "pista": "El Sena guarda una nota: tranquila",
+          "longitud": 6,
+          "respuesta": "SERENA",
+          "definicion": "tranquila",
+          "indicador": "guarda",
+          "desmontaje": "SE(RE)NA: RE (una nota) metido dentro de SENA",
+          "nota": "El Sena es el río de París."
+        }
+      ]
+    },
+    {
+      "dia": 53,
+      "pistas": [
+        {
+          "dificultad": 1,
+          "tipo": "inversion",
+          "pista": "Sarta de vuelta: hacia la espalda",
+          "longitud": 5,
+          "respuesta": "ATRÁS",
+          "definicion": "hacia la espalda",
+          "indicador": "de vuelta",
+          "desmontaje": "SARTA leída hacia atrás → ATRÁS"
+        },
+        {
+          "dificultad": 2,
+          "tipo": "anagrama",
+          "pista": "Liar loco: instrumento de Orfeo",
+          "longitud": 4,
+          "respuesta": "LIRA",
+          "definicion": "instrumento de Orfeo",
+          "indicador": "loco",
+          "desmontaje": "LIAR desordenado → LIRA"
+        },
+        {
+          "dificultad": 3,
+          "tipo": "suma",
+          "pista": "Lecho y fiera: cambia de color",
+          "longitud": 8,
+          "respuesta": "CAMALEÓN",
+          "definicion": "cambia de color",
+          "indicador": "y",
+          "desmontaje": "CAMA (lecho) + LEÓN (fiera)"
+        }
+      ]
+    },
+    {
+      "dia": 54,
+      "pistas": [
+        {
+          "dificultad": 1,
+          "tipo": "inversion",
+          "pista": "Sabor al revés: hurtas",
+          "longitud": 5,
+          "respuesta": "ROBAS",
+          "definicion": "hurtas",
+          "indicador": "al revés",
+          "desmontaje": "SABOR leído hacia atrás → ROBAS"
+        },
+        {
+          "dificultad": 2,
+          "tipo": "homofono",
+          "pista": "Suena a uno el súbdito de Atila",
+          "longitud": 4,
+          "respuesta": "HUNO",
+          "definicion": "el súbdito de Atila",
+          "indicador": "Suena a",
+          "desmontaje": "UNO suena igual que HUNO"
+        },
+        {
+          "dificultad": 3,
+          "tipo": "suma",
+          "pista": "Calcetín y oscuridad: las doce",
+          "longitud": 10,
+          "respuesta": "MEDIANOCHE",
+          "definicion": "las doce",
+          "indicador": "y",
+          "desmontaje": "MEDIA (calcetín) + NOCHE (oscuridad)"
+        }
+      ]
+    },
+    {
+      "dia": 55,
+      "pistas": [
+        {
+          "dificultad": 1,
+          "tipo": "inversion",
+          "pista": "Rata al revés: amarrar",
+          "longitud": 4,
+          "respuesta": "ATAR",
+          "definicion": "amarrar",
+          "indicador": "al revés",
+          "desmontaje": "RATA leída hacia atrás → ATAR"
+        },
+        {
+          "dificultad": 2,
+          "tipo": "anagrama",
+          "pista": "Termo averiado: transporte subterráneo",
+          "longitud": 5,
+          "respuesta": "METRO",
+          "definicion": "transporte subterráneo",
+          "indicador": "averiado",
+          "desmontaje": "TERMO desordenado → METRO"
+        },
+        {
+          "dificultad": 3,
+          "tipo": "suma",
+          "pista": "Detiene al astro: sombrilla",
+          "longitud": 7,
+          "respuesta": "PARASOL",
+          "definicion": "sombrilla",
+          "indicador": "(implícito)",
+          "desmontaje": "PARA (detiene) + SOL (el astro)"
+        }
+      ]
+    },
+    {
+      "dia": 56,
+      "pistas": [
+        {
+          "dificultad": 1,
+          "tipo": "resta",
+          "pista": "Grasa sin erre: venda fina",
+          "longitud": 4,
+          "respuesta": "GASA",
+          "definicion": "venda fina",
+          "indicador": "sin erre",
+          "desmontaje": "GRASA − R → GASA"
+        },
+        {
+          "dificultad": 2,
+          "tipo": "resta",
+          "pista": "Cuerda que ha perdido la u: pelo del cepillo",
+          "longitud": 5,
+          "respuesta": "CERDA",
+          "definicion": "pelo del cepillo",
+          "indicador": "ha perdido la u",
+          "desmontaje": "CUERDA − U → CERDA"
+        },
+        {
+          "dificultad": 3,
+          "tipo": "suma",
+          "pista": "Detiene tropiezos: frena al saltar del avión",
+          "longitud": 10,
+          "respuesta": "PARACAÍDAS",
+          "definicion": "frena al saltar del avión",
+          "indicador": "(implícito)",
+          "desmontaje": "PARA (detiene) + CAÍDAS (tropiezos)"
+        }
+      ]
+    },
+    {
+      "dia": 57,
+      "pistas": [
+        {
+          "dificultad": 1,
+          "tipo": "inversion",
+          "pista": "Ranas de vuelta: curarse",
+          "longitud": 5,
+          "respuesta": "SANAR",
+          "definicion": "curarse",
+          "indicador": "de vuelta",
+          "desmontaje": "RANAS leído hacia atrás → SANAR"
+        },
+        {
+          "dificultad": 2,
+          "tipo": "anagrama",
+          "pista": "Ropa revuelta trae desempleo",
+          "longitud": 4,
+          "respuesta": "PARO",
+          "definicion": "desempleo",
+          "indicador": "revuelta",
+          "desmontaje": "ROPA desordenada → PARO"
+        },
+        {
+          "dificultad": 3,
+          "tipo": "suma",
+          "pista": "Hogaza que ofrece: oso del bambú",
+          "longitud": 5,
+          "respuesta": "PANDA",
+          "definicion": "oso del bambú",
+          "indicador": "(implícito)",
+          "desmontaje": "PAN (hogaza) + DA (ofrece)"
+        }
+      ]
+    },
+    {
+      "dia": 58,
+      "pistas": [
+        {
+          "dificultad": 1,
+          "tipo": "oculta",
+          "pista": "Capital peruana escondida en la limadura",
+          "longitud": 4,
+          "respuesta": "LIMA",
+          "definicion": "Capital peruana",
+          "indicador": "escondida en",
+          "desmontaje": "LIMA-dura"
+        },
+        {
+          "dificultad": 2,
+          "tipo": "anagrama",
+          "pista": "Remo roto: un pez",
+          "longitud": 4,
+          "respuesta": "MERO",
+          "definicion": "un pez",
+          "indicador": "roto",
+          "desmontaje": "REMO desordenado → MERO"
+        },
+        {
+          "dificultad": 3,
+          "tipo": "suma",
+          "pista": "Huye por las sendas el pájaro del desierto",
+          "longitud": 12,
+          "respuesta": "CORRECAMINOS",
+          "definicion": "el pájaro del desierto",
+          "indicador": "(implícito)",
+          "desmontaje": "CORRE (huye) + CAMINOS (sendas)"
+        }
+      ]
+    },
+    {
+      "dia": 59,
+      "pistas": [
+        {
+          "dificultad": 1,
+          "tipo": "resta",
+          "pista": "Pasta sin ese: pierna del animal",
+          "longitud": 4,
+          "respuesta": "PATA",
+          "definicion": "pierna del animal",
+          "indicador": "sin ese",
+          "desmontaje": "PASTA − S → PATA"
+        },
+        {
+          "dificultad": 2,
+          "tipo": "homofono",
+          "pista": "Suena a desmenuzar el queso trazar líneas",
+          "longitud": 5,
+          "respuesta": "RAYAR",
+          "definicion": "trazar líneas",
+          "indicador": "Suena a",
+          "desmontaje": "RALLAR (desmenuzar el queso) suena igual que RAYAR"
+        },
+        {
+          "dificultad": 4,
+          "tipo": "combinada",
+          "pista": "Nos de vuelta da: tubo para explorar",
+          "longitud": 5,
+          "respuesta": "SONDA",
+          "definicion": "tubo para explorar",
+          "indicador": "de vuelta",
+          "desmontaje": "NOS al revés (SON) + DA"
+        }
+      ]
+    },
+    {
+      "dia": 60,
+      "pistas": [
+        {
+          "dificultad": 1,
+          "tipo": "resta",
+          "pista": "Tramo descabezado: lo regala el novio",
+          "longitud": 4,
+          "respuesta": "RAMO",
+          "definicion": "lo regala el novio",
+          "indicador": "descabezado",
+          "desmontaje": "TRAMO − T → RAMO"
+        },
+        {
+          "dificultad": 2,
+          "tipo": "anagrama",
+          "pista": "Recto torcido: un tajo",
+          "longitud": 5,
+          "respuesta": "CORTE",
+          "definicion": "un tajo",
+          "indicador": "torcido",
+          "desmontaje": "RECTO desordenado → CORTE"
+        },
+        {
+          "dificultad": 3,
+          "tipo": "contenedor",
+          "pista": "De dentro de la boga: almacén de vino",
+          "longitud": 6,
+          "respuesta": "BODEGA",
+          "definicion": "almacén de vino",
+          "indicador": "dentro de",
+          "desmontaje": "BO(DE)GA: DE metido dentro de BOGA",
+          "nota": "Bogar es remar; la boga es la acción de remar."
+        }
+      ]
+    },
+    {
+      "dia": 61,
+      "pistas": [
+        {
+          "dificultad": 1,
+          "tipo": "oculta",
+          "pista": "Pez escondido en una tuna",
+          "longitud": 4,
+          "respuesta": "ATÚN",
+          "definicion": "Pez",
+          "indicador": "escondido en",
+          "desmontaje": "un-A TUN-a"
+        },
+        {
+          "dificultad": 2,
+          "tipo": "anagrama",
+          "pista": "Saber alterado: dar un ósculo",
+          "longitud": 5,
+          "respuesta": "BESAR",
+          "definicion": "dar un ósculo",
+          "indicador": "alterado",
+          "desmontaje": "SABER desordenado → BESAR"
+        },
+        {
+          "dificultad": 3,
+          "tipo": "suma",
+          "pista": "Narra lágrimas: dosifica el jarabe",
+          "longitud": 11,
+          "respuesta": "CUENTAGOTAS",
+          "definicion": "dosifica el jarabe",
+          "indicador": "(implícito)",
+          "desmontaje": "CUENTA (narra) + GOTAS (lágrimas)"
+        }
+      ]
+    },
+    {
+      "dia": 62,
+      "pistas": [
+        {
+          "dificultad": 1,
+          "tipo": "resta",
+          "pista": "Frase sin erre: una etapa",
+          "longitud": 4,
+          "respuesta": "FASE",
+          "definicion": "una etapa",
+          "indicador": "sin erre",
+          "desmontaje": "FRASE − R → FASE"
+        },
+        {
+          "dificultad": 2,
+          "tipo": "homofono",
+          "pista": "Suena a dudo el microbio",
+          "longitud": 6,
+          "respuesta": "BACILO",
+          "definicion": "el microbio",
+          "indicador": "Suena a",
+          "desmontaje": "VACILO (dudo) suena igual que BACILO"
+        },
+        {
+          "dificultad": 3,
+          "tipo": "suma",
+          "pista": "Pisotea documentos: sujeta las hojas en la mesa",
+          "longitud": 11,
+          "respuesta": "PISAPAPELES",
+          "definicion": "sujeta las hojas en la mesa",
+          "indicador": "(implícito)",
+          "desmontaje": "PISA (pisotea) + PAPELES (documentos)"
+        }
+      ]
+    },
+    {
+      "dia": 63,
+      "pistas": [
+        {
+          "dificultad": 1,
+          "tipo": "inversion",
+          "pista": "Iras de vuelta: vestido de la India",
+          "longitud": 4,
+          "respuesta": "SARI",
+          "definicion": "vestido de la India",
+          "indicador": "de vuelta",
+          "desmontaje": "IRAS leído hacia atrás → SARI"
+        },
+        {
+          "dificultad": 2,
+          "tipo": "anagrama",
+          "pista": "Molar destrozado: la ética",
+          "longitud": 5,
+          "respuesta": "MORAL",
+          "definicion": "la ética",
+          "indicador": "destrozado",
+          "desmontaje": "MOLAR desordenado → MORAL"
+        },
+        {
+          "dificultad": 3,
+          "tipo": "suma",
+          "pista": "Cruza sierras: gorro que tapa la cara",
+          "longitud": 12,
+          "respuesta": "PASAMONTAÑAS",
+          "definicion": "gorro que tapa la cara",
+          "indicador": "(implícito)",
+          "desmontaje": "PASA (cruza) + MONTAÑAS (sierras)"
+        }
+      ]
+    },
+    {
+      "dia": 64,
+      "pistas": [
+        {
+          "dificultad": 1,
+          "tipo": "oculta",
+          "pista": "Árbol oculto en el pepino",
+          "longitud": 4,
+          "respuesta": "PINO",
+          "definicion": "Árbol",
+          "indicador": "oculto en",
+          "desmontaje": "pe-PINO"
+        },
+        {
+          "dificultad": 2,
+          "tipo": "anagrama",
+          "pista": "Tropa desordenada: alumbramiento",
+          "longitud": 5,
+          "respuesta": "PARTO",
+          "definicion": "alumbramiento",
+          "indicador": "desordenada",
+          "desmontaje": "TROPA desordenada → PARTO"
+        },
+        {
+          "dificultad": 3,
+          "tipo": "suma",
+          "pista": "Magma y vajilla: friega por ti",
+          "longitud": 10,
+          "respuesta": "LAVAPLATOS",
+          "definicion": "friega por ti",
+          "indicador": "y",
+          "desmontaje": "LAVA (magma) + PLATOS (vajilla)"
+        }
+      ]
+    },
+    {
+      "dia": 65,
+      "pistas": [
+        {
+          "dificultad": 1,
+          "tipo": "inversion",
+          "pista": "Ajar al revés: tajada de melón",
+          "longitud": 4,
+          "respuesta": "RAJA",
+          "definicion": "tajada de melón",
+          "indicador": "al revés",
+          "desmontaje": "AJAR leído hacia atrás → RAJA"
+        },
+        {
+          "dificultad": 2,
+          "tipo": "homofono",
+          "pista": "Suena a registre lo serio",
+          "longitud": 5,
+          "respuesta": "GRAVE",
+          "definicion": "lo serio",
+          "indicador": "Suena a",
+          "desmontaje": "GRABE (registre) suena igual que GRAVE"
+        },
+        {
+          "dificultad": 3,
+          "tipo": "contenedor",
+          "pista": "Mi dentro de calla: transporta al herido",
+          "longitud": 7,
+          "respuesta": "CAMILLA",
+          "definicion": "transporta al herido",
+          "indicador": "dentro de",
+          "desmontaje": "CA(MI)LLA: MI metido dentro de CALLA"
+        }
+      ]
+    },
+    {
+      "dia": 66,
+      "pistas": [
+        {
+          "dificultad": 1,
+          "tipo": "oculta",
+          "pista": "Ave oculta en el papá voluntario",
+          "longitud": 4,
+          "respuesta": "PAVO",
+          "definicion": "Ave",
+          "indicador": "oculta en",
+          "desmontaje": "pa-PÁ VO-luntario"
+        },
+        {
+          "dificultad": 2,
+          "tipo": "anagrama",
+          "pista": "Lomas movidas: canto de David",
+          "longitud": 5,
+          "respuesta": "SALMO",
+          "definicion": "canto de David",
+          "indicador": "movidas",
+          "desmontaje": "LOMAS desordenadas → SALMO"
+        },
+        {
+          "dificultad": 3,
+          "tipo": "suma",
+          "pista": "Extrae tapones: abre la botella",
+          "longitud": 11,
+          "respuesta": "SACACORCHOS",
+          "definicion": "abre la botella",
+          "indicador": "(implícito)",
+          "desmontaje": "SACA (extrae) + CORCHOS (tapones)"
+        }
+      ]
+    },
+    {
+      "dia": 67,
+      "pistas": [
+        {
+          "dificultad": 1,
+          "tipo": "oculta",
+          "pista": "Recipiente escondido en el banco llamativo",
+          "longitud": 4,
+          "respuesta": "OLLA",
+          "definicion": "Recipiente",
+          "indicador": "escondido en",
+          "desmontaje": "banc-O LLA-mativo"
+        },
+        {
+          "dificultad": 2,
+          "tipo": "homofono",
+          "pista": "Suena a título nobiliario el hombre",
+          "longitud": 5,
+          "respuesta": "VARÓN",
+          "definicion": "el hombre",
+          "indicador": "Suena a",
+          "desmontaje": "BARÓN (título nobiliario) suena igual que VARÓN"
+        },
+        {
+          "dificultad": 3,
+          "tipo": "suma",
+          "pista": "Mirar lo resistente: col o acelga",
+          "longitud": 7,
+          "respuesta": "VERDURA",
+          "definicion": "col o acelga",
+          "indicador": "(implícito)",
+          "desmontaje": "VER (mirar) + DURA (resistente)"
+        }
+      ]
+    },
+    {
+      "dia": 68,
+      "pistas": [
+        {
+          "dificultad": 1,
+          "tipo": "inversion",
+          "pista": "Ocas de vuelta: bolsa grande",
+          "longitud": 4,
+          "respuesta": "SACO",
+          "definicion": "bolsa grande",
+          "indicador": "de vuelta",
+          "desmontaje": "OCAS leído hacia atrás → SACO"
+        },
+        {
+          "dificultad": 2,
+          "tipo": "anagrama",
+          "pista": "Ramo deshecho: fruto de la zarza",
+          "longitud": 4,
+          "respuesta": "MORA",
+          "definicion": "fruto de la zarza",
+          "indicador": "deshecho",
+          "desmontaje": "RAMO desordenado → MORA"
+        },
+        {
+          "dificultad": 3,
+          "tipo": "suma",
+          "pista": "Extremo y extremidad: una patada",
+          "longitud": 8,
+          "respuesta": "PUNTAPIÉ",
+          "definicion": "una patada",
+          "indicador": "y",
+          "desmontaje": "PUNTA (extremo) + PIE (extremidad)"
+        }
+      ]
+    },
+    {
+      "dia": 69,
+      "pistas": [
+        {
+          "dificultad": 1,
+          "tipo": "oculta",
+          "pista": "Verdura escondida en el saco lleno",
+          "longitud": 3,
+          "respuesta": "COL",
+          "definicion": "Verdura",
+          "indicador": "escondida en",
+          "desmontaje": "sa-CO L-leno"
+        },
+        {
+          "dificultad": 2,
+          "tipo": "homofono",
+          "pista": "Suena a sublevar lo que se hace con las fotos",
+          "longitud": 7,
+          "respuesta": "REVELAR",
+          "definicion": "lo que se hace con las fotos",
+          "indicador": "Suena a",
+          "desmontaje": "REBELAR (sublevar) suena igual que REVELAR"
+        },
+        {
+          "dificultad": 3,
+          "tipo": "suma",
+          "pista": "Interpreta vinilos: el viejo aparato de música",
+          "longitud": 10,
+          "respuesta": "TOCADISCOS",
+          "definicion": "el viejo aparato de música",
+          "indicador": "(implícito)",
+          "desmontaje": "TOCA (interpreta) + DISCOS (vinilos)"
+        }
+      ]
+    },
+    {
+      "dia": 70,
+      "pistas": [
+        {
+          "dificultad": 1,
+          "tipo": "oculta",
+          "pista": "Licor oculto en el turrón",
+          "longitud": 3,
+          "respuesta": "RON",
+          "definicion": "Licor",
+          "indicador": "oculto en",
+          "desmontaje": "tur-RÓN"
+        },
+        {
+          "dificultad": 2,
+          "tipo": "anagrama",
+          "pista": "Gato alborotado: la viste el juez",
+          "longitud": 4,
+          "respuesta": "TOGA",
+          "definicion": "la viste el juez",
+          "indicador": "alborotado",
+          "desmontaje": "GATO desordenado → TOGA"
+        },
+        {
+          "dificultad": 3,
+          "tipo": "contenedor",
+          "pista": "Le metido en la pata: tabla del pintor",
+          "longitud": 6,
+          "respuesta": "PALETA",
+          "definicion": "tabla del pintor",
+          "indicador": "metido en",
+          "desmontaje": "PA(LE)TA: LE metido dentro de PATA"
+        }
+      ]
+    },
+    {
+      "dia": 71,
+      "pistas": [
+        {
+          "dificultad": 1,
+          "tipo": "inversion",
+          "pista": "Odio de vuelta: sentido para la música",
+          "longitud": 4,
+          "respuesta": "OÍDO",
+          "definicion": "sentido para la música",
+          "indicador": "de vuelta",
+          "desmontaje": "ODIO leído hacia atrás → OÍDO"
+        },
+        {
+          "dificultad": 2,
+          "tipo": "homofono",
+          "pista": "Suena a empleo lo que gira en la rueca",
+          "longitud": 4,
+          "respuesta": "HUSO",
+          "definicion": "lo que gira en la rueca",
+          "indicador": "Suena a",
+          "desmontaje": "USO (empleo) suena igual que HUSO"
+        },
+        {
+          "dificultad": 4,
+          "tipo": "combinada",
+          "pista": "Alas de vuelta y mi nota: embutido",
+          "longitud": 6,
+          "respuesta": "SALAMI",
+          "definicion": "embutido",
+          "indicador": "de vuelta / y",
+          "desmontaje": "ALAS al revés (SALA) + MI (nota)"
+        }
+      ]
     }
   ]
 }

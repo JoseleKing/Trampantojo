@@ -39,7 +39,7 @@ Visita `/reiniciar/` (por ejemplo `http://localhost:8000/reiniciar/`) y pulsa «
 
 ## Configuración
 
-- `FECHA_INICIO` en `js/app.js`: el día que corresponde al día n.º 1 del JSON (`AAAA-MM-DD`, hora local). Cuando se acaban los días del JSON, el ciclo vuelve a empezar; el número que se comparte sigue creciendo. Hay 41 días: el último es el 10 de noviembre de 2026 y el 11 vuelve el día 1 (con el #42).
+- `FECHA_INICIO` en `js/app.js`: el día que corresponde al día n.º 1 del JSON (`AAAA-MM-DD`, hora local). Cuando se acaban los días del JSON, el ciclo vuelve a empezar; el número que se comparte sigue creciendo. Hay 71 días: el último es el 10 de diciembre de 2026 y el 11 vuelve el día 1 (con el #72).
 - Para añadir pistas, edita el JSON: cada día de `dias` lleva sus tres retos en `pistas`, ordenados de menos a más difícil. El desmontaje se genera a partir de `tipo`, `pista`, `definicion`, `indicador` y `desmontaje`; si algún dato no encaja, la respuesta aparece letra a letra en lugar de la animación específica.
 
 ## Publicarlo en GitHub Pages
