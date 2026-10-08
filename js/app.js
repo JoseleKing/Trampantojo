@@ -595,7 +595,7 @@ function mostrarFinal(n) {
   }
 
   $('f-aviso').textContent = '';
-  $('f-compartir').onclick = () => compartir(n, ayudas, falladas, racha);
+  $('f-compartir').onclick = () => compartir(n, falladas);
 
   mostrar('p-final');
   medirFinal();
@@ -632,14 +632,10 @@ function iniciarCuenta(n) {
   reloj = setInterval(tic, 1000);
 }
 
-async function compartir(n, ayudas, falladas, racha) {
-  const url = location.origin + location.pathname;
-  const texto = [
-    `Trampantojo #${n}`,
-    `${marcas(ayudas, falladas)} ${falladas.some(Boolean) ? balance(ayudas, falladas) : ayudasTexto(suma(ayudas))}`,
-    racha > 1 ? `🔥 ${racha} días seguidos` : null,
-    url,
-  ].filter(Boolean).join('\n');
+// Una marca por reto: ▰ resuelto, ▱ fallado. «Trampantojo nº 7 ▰▱▰ 2/3 aciertos» y el enlace.
+async function compartir(n, falladas) {
+  const aciertos = falladas.filter((f) => !f).length;
+  const texto = `Trampantojo nº ${n} ${falladas.map((f) => (f ? '▱' : '▰')).join('')} ${aciertos}/${falladas.length} aciertos\njoseleking.github.io/Trampantojo`;
 
   const aviso = $('f-aviso');
   if (navigator.share) {
