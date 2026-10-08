@@ -10,7 +10,6 @@ const INTENTOS = 3;
 
 const URL_PISTAS = 'trampantojo-pistas.json';
 const CLAVE = 'trampantojo:v1';
-const CLAVE_TEMA = 'almanaque:tema'; // común a Almanaque y a todos sus juegos
 
 // ════════════════════════════════════════════════════════════════════
 
@@ -690,21 +689,6 @@ function empezarTutorial() {
   jugar(datos.tutorial[0], { modo: 'tutorial', indice: 0 });
 }
 
-// ── Tema ───────────────────────────────────────────────────────────
-
-const temaEfectivo = () => (document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light');
-function sincronizarTema() {
-  const oscuro = temaEfectivo() === 'dark';
-  $('b-tema').setAttribute('aria-label', oscuro ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro');
-  $('meta-tema').setAttribute('content', oscuro ? '#1D1813' : '#F3EAD8');
-}
-function alternarTema() {
-  const nuevo = temaEfectivo() === 'dark' ? 'light' : 'dark';
-  document.documentElement.dataset.theme = nuevo;
-  almacen.escribir(CLAVE_TEMA, nuevo);
-  sincronizarTema();
-}
-
 // ── Diálogo de ayuda ───────────────────────────────────────────────
 
 function prepararGlosario() {
@@ -761,7 +745,6 @@ function enlazar() {
   $('b-saltar-tutorial').addEventListener('click', () => { estado.tutorial = true; guardar(); abrirHoy(); });
   $('b-ir-hoy').addEventListener('click', abrirHoy);
   $('b-reintentar').addEventListener('click', () => location.reload());
-  $('b-tema').addEventListener('click', alternarTema);
 
   const dialogo = $('d-ayuda');
   $('b-ayuda').addEventListener('click', () => dialogo.showModal());
@@ -790,7 +773,6 @@ function ocultarPortada(desde) {
 async function iniciar() {
   const inicio = performance.now();
   enlazar();
-  sincronizarTema();
 
   const params = new URLSearchParams(location.search);
   if (params.has('reiniciar')) almacen.borrar(CLAVE);
