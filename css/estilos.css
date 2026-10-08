@@ -34,35 +34,6 @@
   --f-texto: 'Literata', 'Iowan Old Style', Georgia, serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    color-scheme: dark;
-    --papel: #1D1813;
-    --papel-alto: #2A231C;
-    --papel-hondo: #15110D;
-    --tinta: #EFE4CF;
-    --tinta-2: #C2B196;
-    --tinta-3: #9C8A72;
-    --linea: #3E3327;
-    --regla: #B3A18A;
-    --acento: #8CC4A2;
-    --acento-suave: rgba(140, 196, 162, .14);
-    --alerta: #E58A7F;
-    --oro: #D6A46D;
-    --oro-texto: #DDB27F;
-    --marcador: rgba(185, 162, 122, .26);
-    --azul: #93B6D6;
-    --verde: #8FC08A;
-    --ambar: #DDB25C;
-    --acierto-fondo: #EFE4CF;
-    --acierto-tinta: #2A2019;
-    --sombra: 0 1px 0 rgba(255, 255, 255, .04) inset, 0 24px 48px -26px rgba(0, 0, 0, .85), 0 2px 8px -3px rgba(0, 0, 0, .5);
-    --grano: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .94 0 0 0 0 .89 0 0 0 0 .81 0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    --ver-luna: none;
-    --ver-sol: block;
-  }
-}
-
 :root[data-theme="dark"] {
   color-scheme: dark;
   --papel: #1D1813;

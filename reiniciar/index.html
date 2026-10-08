@@ -11,9 +11,7 @@
   <script>
     // Mismo tema que el juego (esa preferencia no se borra).
     try {
-      var t = localStorage.getItem('trampantojo:tema');
-      if (t === 'claro') document.documentElement.dataset.theme = 'light';
-      if (t === 'oscuro') document.documentElement.dataset.theme = 'dark';
+      if (localStorage.getItem('almanaque:tema') === 'dark') document.documentElement.dataset.theme = 'dark';
     } catch (e) {}
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">

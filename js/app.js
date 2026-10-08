@@ -10,7 +10,7 @@ const INTENTOS = 3;
 
 const URL_PISTAS = 'trampantojo-pistas.json';
 const CLAVE = 'trampantojo:v1';
-const CLAVE_TEMA = 'trampantojo:tema';
+const CLAVE_TEMA = 'almanaque:tema'; // común a Almanaque y a todos sus juegos
 
 // ════════════════════════════════════════════════════════════════════
 
@@ -692,8 +692,7 @@ function empezarTutorial() {
 
 // ── Tema ───────────────────────────────────────────────────────────
 
-const oscuroSistema = () => window.matchMedia?.('(prefers-color-scheme: dark)').matches;
-const temaEfectivo = () => document.documentElement.dataset.theme || (oscuroSistema() ? 'dark' : 'light');
+const temaEfectivo = () => (document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light');
 function sincronizarTema() {
   const oscuro = temaEfectivo() === 'dark';
   $('b-tema').setAttribute('aria-label', oscuro ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro');
@@ -702,7 +701,7 @@ function sincronizarTema() {
 function alternarTema() {
   const nuevo = temaEfectivo() === 'dark' ? 'light' : 'dark';
   document.documentElement.dataset.theme = nuevo;
-  almacen.escribir(CLAVE_TEMA, nuevo === 'dark' ? 'oscuro' : 'claro');
+  almacen.escribir(CLAVE_TEMA, nuevo);
   sincronizarTema();
 }
 
@@ -770,7 +769,6 @@ function enlazar() {
   dialogo.addEventListener('click', (e) => { if (e.target === dialogo) dialogo.close(); });
   $('d-tutorial').addEventListener('click', () => { dialogo.close(); empezarTutorial(); });
 
-  window.matchMedia?.('(prefers-color-scheme: dark)').addEventListener?.('change', sincronizarTema);
   let pendiente = 0;
   window.addEventListener('resize', () => {
     cancelAnimationFrame(pendiente);
