@@ -305,8 +305,6 @@ a.boton { text-decoration: none; }
 .arranque-logo {
   width: 132px;
   height: 132px;
-  border-radius: 22.5%;
-  box-shadow: 0 14px 22px rgba(42, 32, 25, .22);
   animation: aparece .6s ease-out both;
   --sombra-logo: sombra-logo 3.6s ease-in-out infinite;
 }
@@ -332,12 +330,22 @@ a.boton { text-decoration: none; }
 .portada-caja {
   width: 104px;
   height: 104px;
-  /* Sombra con border-radius (22.5% = rx 180 / 800 del logo) en vez de
-     drop-shadow: algunos navegadores la calculan sobre el cuadrado del <svg>
-     y aparecen esquinas oscuras. */
-  border-radius: 22.5%;
-  box-shadow: 0 14px 22px rgba(42, 32, 25, .22);
 }
+/* La sombra y el redondeo van en un <span> que envuelve el <svg>, no en el
+   propio <svg>: Safari pinta la sombra sobre el cuadrado del <svg> (más aún
+   si su contenido está animado) y aparecen esquinas oscuras. 22.5% = rx 180
+   / 800 del logo; overflow recorta cualquier resto fuera de la forma. */
+.arranque-logo,
+.portada-caja {
+  display: block;
+  margin-inline: auto;
+  border-radius: 22.5%;
+  overflow: hidden;
+  box-shadow: 0 14px 22px rgba(42, 32, 25, .22);
+  isolation: isolate;
+}
+.arranque-logo svg,
+.portada-caja svg { display: block; width: 100%; height: 100%; }
 /* La sombra en forma de interrogación del logo se mece, como si se moviera
    la luz. La animación llega al <use> mediante la variable --sombra-logo. */
 .logo-sombra {
