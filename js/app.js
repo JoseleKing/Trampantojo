@@ -759,15 +759,15 @@ function enlazar() {
   });
 }
 
-// La portada se queda un mínimo en pantalla aunque las pistas carguen antes.
+// La portada se queda un mínimo en pantalla (contado desde que empezó a cargar la página)
+// aunque las pistas carguen antes.
 const DURACION_PORTADA = 1500;
-function ocultarPortada(desde) {
-  const resto = Math.max(0, DURACION_PORTADA - (performance.now() - desde));
+function ocultarPortada() {
+  const resto = Math.max(0, DURACION_PORTADA - performance.now());
   setTimeout(() => $('arranque').classList.add('fuera'), resto);
 }
 
 async function iniciar() {
-  const inicio = performance.now();
   enlazar();
 
   const params = new URLSearchParams(location.search);
@@ -786,7 +786,7 @@ async function iniciar() {
   } catch (e) {
     console.error('No se pudieron cargar las pistas', e);
     mostrar('p-error');
-    ocultarPortada(inicio);
+    ocultarPortada();
     return;
   }
 
@@ -799,7 +799,7 @@ async function iniciar() {
   }
   if (!estado.tutorial) mostrar('p-intro');
   else abrirHoy();
-  ocultarPortada(inicio);
+  ocultarPortada();
 }
 
 iniciar();
