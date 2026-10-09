@@ -760,10 +760,13 @@ function enlazar() {
 }
 
 // La portada se queda un mínimo en pantalla (contado desde que empezó a cargar la página)
-// aunque las pistas carguen antes.
+// aunque las pistas carguen antes. Si tarda en pintarse (la primera visita), se queda al menos
+// PORTADA_PINTADA desde entonces, para que el logo acabe de aparecer.
 const DURACION_PORTADA = 1500;
+const PORTADA_PINTADA = 1400;
 function ocultarPortada() {
-  const resto = Math.max(0, DURACION_PORTADA - performance.now());
+  const pintada = performance.getEntriesByName('first-contentful-paint')[0]?.startTime ?? performance.now();
+  const resto = Math.max(0, DURACION_PORTADA - performance.now(), PORTADA_PINTADA - (performance.now() - pintada));
   setTimeout(() => $('arranque').classList.add('fuera'), resto);
 }
 
