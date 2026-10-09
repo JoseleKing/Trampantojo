@@ -305,8 +305,10 @@ a.boton { text-decoration: none; }
 .arranque-logo {
   width: 132px;
   height: 132px;
-  filter: drop-shadow(0 14px 22px rgba(42, 32, 25, .22));
+  border-radius: 22.5%;
+  box-shadow: 0 14px 22px rgba(42, 32, 25, .22);
   animation: aparece .6s ease-out both;
+  --sombra-logo: sombra-logo 3.6s ease-in-out infinite;
 }
 .arranque-nombre {
   margin: 0;
@@ -327,7 +329,27 @@ a.boton { text-decoration: none; }
   padding: 34px 0 26px;
   text-align: center;
 }
-.portada-caja { width: 104px; height: 104px; filter: drop-shadow(0 14px 22px rgba(42, 32, 25, .22)); }
+.portada-caja {
+  width: 104px;
+  height: 104px;
+  /* Sombra con border-radius (22.5% = rx 180 / 800 del logo) en vez de
+     drop-shadow: algunos navegadores la calculan sobre el cuadrado del <svg>
+     y aparecen esquinas oscuras. */
+  border-radius: 22.5%;
+  box-shadow: 0 14px 22px rgba(42, 32, 25, .22);
+}
+/* La sombra en forma de interrogación del logo se mece, como si se moviera
+   la luz. La animación llega al <use> mediante la variable --sombra-logo. */
+.logo-sombra {
+  transform-box: fill-box;
+  transform-origin: 50% 0;
+  animation: var(--sombra-logo, none);
+}
+@keyframes sombra-logo {
+  0%, 100% { transform: skewX(0) scale(1, 1); }
+  30% { transform: skewX(-34deg) scale(1.08, 1.14); }
+  70% { transform: skewX(28deg) scale(.94, .88); }
+}
 .portada::after {
   content: '✦';
   position: absolute;
