@@ -125,6 +125,7 @@ function jugar(p, { modo, n = null, indice = 0, repetir = false }) {
     ayudas: 0,
     fallos: 0,
     celdas: sol.map(() => ({ l: '', fija: false })),
+    cursor: 0,
     resuelta: false,
     fallada: false,
   };
@@ -136,8 +137,11 @@ function jugar(p, { modo, n = null, indice = 0, repetir = false }) {
     partida.fallos = Math.min(enCurso.fallos || 0, INTENTOS - 1);
     for (const i of enCurso.fijas || []) if (sol[i]) partida.celdas[i] = { l: sol[i], fija: true };
     const libres = Array.from(enCurso.letras || '');
-    partida.celdas.filter((c) => !c.fija).forEach((c, k) => { c.l = libres[k] || ''; });
+    partida.celdas.filter((c) => !c.fija).forEach((c, k) => { c.l = (libres[k] || '').trim(); });
   }
+  // El cursor empieza en la primera casilla vacía (o en la última libre, si están todas llenas).
+  const vacia = partida.celdas.findIndex((c) => !c.fija && !c.l);
+  situar(vacia >= 0 ? vacia : partida.celdas.length - 1, -1);
 
   // Cabecera
   if (modo === 'tutorial') {
@@ -181,7 +185,7 @@ function jugar(p, { modo, n = null, indice = 0, repetir = false }) {
   $('j-desmontaje').hidden = true;
   $('j-mensaje').textContent = '';
   entrada.disabled = false;
-  entrada.value = partida.celdas.filter((c) => !c.fija).map((c) => c.l).join('');
+  entrada.value = previo = '';
   $('j-ayuda-lectura').textContent = `Respuesta de ${plural(sol.length, 'letra', 'letras')}.`;
   entrada.setAttribute('aria-label', `Tu respuesta, ${plural(sol.length, 'letra', 'letras')}`);
 
@@ -201,8 +205,17 @@ function jugar(p, { modo, n = null, indice = 0, repetir = false }) {
   }
 }
 
-function libres() {
-  return partida.celdas.map((c, i) => (c.fija ? -1 : i)).filter((i) => i >= 0);
+/** Primera casilla no destapada desde `desde` en la dirección `paso` (±1), o -1. */
+function libreDesde(desde, paso) {
+  for (let i = desde; i >= 0 && i < partida.celdas.length; i += paso) if (!partida.celdas[i].fija) return i;
+  return -1;
+}
+
+/** Pone el cursor en la casilla `i` o, si está destapada, en la libre más cercana (primero hacia `paso`). */
+function situar(i, paso = 1) {
+  let c = libreDesde(i, paso);
+  if (c < 0) c = libreDesde(i, -paso);
+  partida.cursor = c;
 }
 
 function pintarCasillas() {
@@ -218,7 +231,7 @@ function pintarCasillas() {
   cont.style.setProperty('--tam', `${Math.min(54, Math.floor((ancho - gap * (n - 1)) / n))}px`);
 
   const enfocada = document.activeElement === entrada;
-  const activa = partida.celdas.findIndex((c) => !c.fija && !c.l);
+  const activa = partida.cursor;
   partida.celdas.forEach((c, i) => {
     const el = cont.children[i];
     el.textContent = c.l;
@@ -231,16 +244,63 @@ function pintarCasillas() {
   });
 }
 
+// El campo oculto solo recoge lo que se teclea: cada letra nueva se escribe en la casilla del
+// cursor y el campo se vacía. Mientras dura una composición (tildes, teclados de Android) no se
+// toca su valor: se compara con el anterior para saber qué letras han entrado o salido.
 let componiendo = false;
-function volcar(reescribir) {
+let previo = '';
+
+function escribirLetra(l) {
+  const c = partida.cursor;
+  if (c < 0) return;
+  partida.celdas[c].l = l;
+  const sig = libreDesde(c + 1, 1);
+  if (sig >= 0) partida.cursor = sig;
+}
+
+function borrarLetra() {
+  const c = partida.cursor;
+  if (c < 0) return;
+  if (partida.celdas[c].l) { partida.celdas[c].l = ''; return; }
+  const ant = libreDesde(c - 1, -1);
+  if (ant >= 0) { partida.cursor = ant; partida.celdas[ant].l = ''; }
+}
+
+function tras(cambio) {
   if (!partida || partida.resuelta) return;
-  const idx = libres();
-  const ls = Array.from(normalizar(entrada.value)).slice(0, idx.length);
-  idx.forEach((i, k) => { partida.celdas[i].l = ls[k] || ''; });
-  if (reescribir && entrada.value !== ls.join('')) entrada.value = ls.join('');
+  cambio();
   $('j-mensaje').textContent = '';
   pintarCasillas();
   guardarEnCurso();
+}
+
+function leerEntrada() {
+  const v = entrada.value;
+  let k = 0;
+  while (k < v.length && k < previo.length && v[k] === previo[k]) k++;
+  const quitadas = normalizar(previo.slice(k)).length;
+  const nuevas = Array.from(normalizar(v.slice(k)));
+  previo = v;
+  if (!componiendo) entrada.value = previo = '';
+  if (!quitadas && !nuevas.length) return;
+  tras(() => {
+    for (let j = 0; j < quitadas; j++) borrarLetra();
+    nuevas.forEach(escribirLetra);
+  });
+}
+
+/** Lleva el cursor a la casilla que hay bajo el punto pulsado. */
+function elegirCasilla(x) {
+  if (!partida || partida.resuelta) return;
+  const casillas = [...$('j-casillas').children];
+  let mejor = -1;
+  let dist = Infinity;
+  casillas.forEach((el, i) => {
+    const r = el.getBoundingClientRect();
+    const d = x < r.left ? r.left - x : x > r.right ? x - r.right : 0;
+    if (d < dist) { dist = d; mejor = i; }
+  });
+  if (mejor >= 0) { situar(mejor); pintarCasillas(); }
 }
 
 function guardarEnCurso() {
@@ -252,7 +312,7 @@ function guardarEnCurso() {
     ayudas: partida.ayudas,
     fallos: partida.fallos,
     fijas: partida.celdas.map((c, i) => (c.fija ? i : -1)).filter((i) => i >= 0),
-    letras: partida.celdas.filter((c) => !c.fija).map((c) => c.l).join(''),
+    letras: partida.celdas.filter((c) => !c.fija).map((c) => c.l || ' ').join(''),
   };
   guardar();
 }
@@ -337,8 +397,7 @@ function destaparLetra() {
   if (!candidatas.length) { comprobar(); return false; }
   const i = candidatas[Math.floor(Math.random() * candidatas.length)];
   celdas[i] = { l: sol[i], fija: true };
-  // Las letras libres siguen en su sitio; el campo oculto se recompone con ellas.
-  entrada.value = celdas.filter((c) => !c.fija).map((c) => c.l).join('');
+  if (partida.cursor === i) situar(i);
   pintarCasillas();
   $('j-casillas').children[i].classList.add('destapada');
   $('j-mensaje').textContent = '';
@@ -716,14 +775,24 @@ function migrarDiaUnico() {
 
 function enlazar() {
   entrada.addEventListener('compositionstart', () => { componiendo = true; });
-  entrada.addEventListener('compositionend', () => { componiendo = false; volcar(true); });
-  entrada.addEventListener('input', () => volcar(!componiendo));
+  // Safari avisa del fin de la composición antes del último «input»; se lee en cuanto pase.
+  entrada.addEventListener('compositionend', () => { componiendo = false; setTimeout(leerEntrada); });
+  entrada.addEventListener('input', leerEntrada);
   entrada.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') { e.preventDefault(); comprobar(); }
+    if (e.key === 'Enter') { e.preventDefault(); comprobar(); return; }
+    if (e.isComposing || componiendo || !partida) return;
+    const c = partida.cursor;
+    if (e.key === 'Backspace') { e.preventDefault(); tras(borrarLetra); }
+    else if (e.key === 'Delete') { e.preventDefault(); tras(() => { if (c >= 0) partida.celdas[c].l = ''; }); }
+    else if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+      e.preventDefault();
+      const paso = e.key === 'ArrowLeft' ? -1 : 1;
+      const i = libreDesde(c + paso, paso);
+      if (i >= 0) { partida.cursor = i; pintarCasillas(); }
+    }
   });
-  const alFinal = () => { const l = entrada.value.length; try { entrada.setSelectionRange(l, l); } catch { /* nada */ } };
-  entrada.addEventListener('focus', () => { alFinal(); pintarCasillas(); });
-  entrada.addEventListener('click', alFinal);
+  entrada.addEventListener('click', (e) => elegirCasilla(e.clientX));
+  entrada.addEventListener('focus', () => pintarCasillas());
   entrada.addEventListener('blur', () => pintarCasillas());
 
   $('j-comprobar').addEventListener('click', comprobar);
